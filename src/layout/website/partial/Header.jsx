@@ -12,14 +12,15 @@ import Rectangle from '../../../common/image/Rectangle.png';
 import { Link } from "react-router-dom";
 import Sidebar from './Sidebar'
 import { app_url, organizer_url, customer_url } from '../../../common/Helpers';
+import Mobilemenu from "../../../component/mobilemenu";
+import Whitestar from "../../../common/icon/whitestart.svg";
 const Header = () => {
     const customer_token = localStorage.getItem('userauth');
-    const organizer_token = localStorage.getItem('organizerid');
-    const customer_name = localStorage.getItem('username');
-    const organizer_name = localStorage.getItem('organizername');
+    const organizer_token = localStorage.getItem('organizerauth');
+    const accountTargetUrl = customer_token ? customer_url + 'dashboard' : organizer_token ? organizer_url + 'dashboard' : app_url + 'auth/customer/login';
     return (
         <>
-            <header>
+            <header className="only-pc">
                 <Container fluid className="rectangle_bg_pos">
                     <Row className="">
                         <Col md={12}>
@@ -30,25 +31,25 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link to={app_url}><img className="header-logo mobile-screen" src={AppLogo} /></Link>
                                 </li>
-                                {/* <li className="nav-item mob-sc-css-head-btn-mar">
+                                <li className="nav-item mob-sc-css-head-btn-mar">
                                     <Link to={organizer_url + 'dashboard'}>
                                         <WhitestarBtn title={'Location'} />
                                     </Link>
-                                </li> */}
+                                </li>
                                 <li className="nav-item header-btn-res">
                                     {customer_token || organizer_token ?
                                         (
                                             <>
                                                 {customer_token ? (
                                                     <Link className="button-join" to={customer_url + 'dashboard'} >
-                                                        <WhipersonBtn title={customer_name ? customer_name : 'My account'} />
+                                                        <WhipersonBtn title={'My Account'} />
                                                     </Link>
                                                 ) : (
                                                     <></>
                                                 )}
                                                 {organizer_token ? (
                                                     <Link className="button-join" to={organizer_url + 'dashboard'} >
-                                                        <WhipersonBtn title={organizer_name ? organizer_name : 'My account'} />
+                                                        <WhipersonBtn title={'My Account'} />
                                                     </Link>
                                                 ) : (
                                                     <></>
@@ -64,7 +65,7 @@ const Header = () => {
                                 </li>
                             </ul>
                         </Col>
-                        <Col md={2}>
+                        <Col md={4} className="p-0">
                             <div className="float-left">
                                 <Link to={app_url}>
                                     <span>
@@ -77,7 +78,34 @@ const Header = () => {
                     </Row>
                 </Container>
             </header >
+            <header className="only-mobile">
+                <div className="header-item-overlay"></div>
+                <div className="header-container">
+                    <div className="header-item-hamburger">
+                        <Mobilemenu />
+                    </div>
+                    <div className="header-items">
+                        <Link to={app_url}>
+                            <img className="mobile-screen" src={AppLogo} alt="App Logo" />
+                        </Link>
+                    </div>
+                    <div className="header-items">
+                        <div className="header-icons">
+                            <Link to={organizer_url + 'dashboard'}>
+                                <img height={16} width={16} src={Whitestar} />
+                            </Link>
+                        </div>
+                        <div className="header-icons">
+                            <Link className="button-join" to={accountTargetUrl}>
+                                <img height={30} width={30} src={PersonIcon} alt="Person Icon" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+
+            </header>
         </>
     )
 }
+
 export default Header;

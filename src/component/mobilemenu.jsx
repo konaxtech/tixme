@@ -13,7 +13,7 @@ const Example = () => {
   };
 
   return (
-    <Menu isOpen={show} className='only-mobile'>
+    <Menu left isOpen={show} className='only-mobile'>
       <Link onClick={() => setshow(false)} to={app_url}><img className="header-logo-in-sidebar" src={AppLogo} alt="App Logo" /></Link>
       <Link onClick={() => setshow(false)} to={app_url + 'event'} className="menu-item">Events</Link>
       <Link onClick={() => setshow(false)} to={app_url + 'auth/organizer/login'} className="menu-item">List your event</Link>

@@ -9,12 +9,12 @@ import BookingLogo from "../../common/icon/image 8.png";
 import ExpediaIcon from "../../common/icon/image 9.png";
 import TuiIconIcon from "../../common/icon/image 10.png";
 
-import Arts from '../../common/category/Group 1171274918.svg';
-import Business from '../../common/category/Group 1171274915.svg';
-import Food from '../../common/category/Group 1171274917.svg';
-import Music from '../../common/category/Group 1171274913.svg';
-import NIGHTLIFE from '../../common/category/Group 1171274914.svg';
-import Sports from '../../common/category/Group 1171274916.svg';
+import Arts from '../../category/Arts & Theater.svg';
+import Business from '../../category/Business & Networking.svg';
+import Food from '../../category/Food & Drinks.svg';
+import Music from '../../category/Music.svg';
+import NIGHTLIFE from '../../category/NIGHTLIFE.svg';
+import Sports from '../../category/Sports & Fitness.svg';
 
 import OurPartnerIcon from "../../common/icon/Our Partner.svg";
 import MusicIcon from "../../common/icon/Music.svg";
@@ -36,20 +36,18 @@ import Zoom from 'react-reveal/Zoom';
 import { Link, useNavigate } from "react-router-dom";
 import { apiurl, onlyDayMonth, shortPer, app_url } from "../../common/Helpers";
 import { useTransition, animated } from 'react-spring';
-import Alert from 'react-bootstrap/Alert';
+
 const Home = ({ title }) => {
   const [Eventlist, setEventlist] = useState([]);
-  const [Eventloader, setEventloader] = useState(false);
   const [Listitems, setListitems] = useState([]);
-  const [filtercategory, setFilterCategory] = useState('');
   const navigate = useNavigate();
   const settings = {
     dots: false,
     infinite: true,
     autoplay: true,
-    slidesToShow: 6,
-    slidesToScroll: 2,
-    initialSlide: 1,
+    slidesToShow: 7,
+    slidesToScroll: 1,
+    initialSlide: 0,
     arrows: false,
     speed: 1000,
     cssEase: "linear",
@@ -94,11 +92,9 @@ const Home = ({ title }) => {
   }
   const fetchEvent = async () => {
     try {
-      setEventloader(true)
       const requestData = {
         limit: 10,
-        organizerid: null,
-        category: filtercategory ? filtercategory : null
+        organizerid: null
       }
       fetch(apiurl + "website/all-events-list", {
         method: "POST",
@@ -113,15 +109,12 @@ const Home = ({ title }) => {
             setEventlist(data.data);
           } else {
           }
-          setEventloader(false)
         })
         .catch((error) => {
           console.error("Insert error:", error);
-          setEventloader(false)
         });
     } catch (error) {
       console.error("Login api error:", error);
-      setEventloader(false)
     }
   };
   const fetchCategory = async () => {
@@ -151,7 +144,7 @@ const Home = ({ title }) => {
   useEffect(() => {
     fetchEvent();
     fetchCategory();
-  }, [filtercategory]);
+  }, []);
   const texts = [
     "Unlock Your Entertainment Gateway",
     "Where Thrills Commence",
@@ -177,15 +170,7 @@ const Home = ({ title }) => {
     leave: { transform: 'translateY(-100%)', opacity: 0 },
     config: { tension: 220, friction: 120 }
   });
-  const CategoryImage = [
-    { image: Arts },
-    { image: Business },
-    { image: Food },
-    { image: Music },
-    { image: NIGHTLIFE },
-    { image: Sports },
-  ];
-  const firstSixCategories = Listitems.slice(0, 6);
+
   return (
     <>
       <Container fluid className="body-container">
@@ -207,17 +192,17 @@ const Home = ({ title }) => {
                 </Flip>
                 <div className="flip-text-animation">
                   {transitions((style, i) => (
-                    <animated.div
-                      style={{
-                        ...style,
-                        position: 'absolute',
-                        width: '100%',
-                        color: '#0047ab'
-                        // textAlign: 'center'
-                      }}
-                    >
-                      {texts[i]}
-                    </animated.div>
+                      <animated.div
+                          style={{
+                            ...style,
+                            position: 'absolute',
+                            width: '100%',
+                            color: '#0047ab'
+                            // textAlign: 'center'
+                          }}
+                      >
+                        {texts[i]}
+                      </animated.div>
                   ))}
                 </div>
                 {/*<Bounce right cascade>*/}
@@ -241,10 +226,10 @@ const Home = ({ title }) => {
                   <h3 className="find-near-box">Find Near By Events</h3>
                 </Col>
                 <Col md={12} className="Find-Near-form">
-                  <div>
-                    <select name="" id="" className="theme-dropdown dropdown-custome category-select" onChange={(event) => setFilterCategory(event.target.value)}>
+                  <div className="d-flex">
+                    <select name="" id="" className="theme-dropdown dropdown-custome category-select">
                       {Listitems.map((item, index) => (
-                        <option value={item._id}>{item.name}</option>
+                          <option value={item._id}>{item.name}</option>
                       ))}
                     </select>
                     <select name="" id="" className="theme-dropdown dropdown-custome location-select">
@@ -260,21 +245,95 @@ const Home = ({ title }) => {
                 <Col md={12} className="category-box-responsive">
                   <div className="category-section text-center">
                     <Slider {...settings}>
-                      {firstSixCategories.map((item, index) => (
-                        <div key={index} className="mx-2">
-                          <div className="category-items-box">
-                            <div className="cat-image-box" onClick={() => setFilterCategory(item._id)}>
-                              {/* Dynamically set the image source based on CategoryImage */}
-                              <img
-                                className="ticket-category-bg"
-                                src={CategoryImage[index].image}
-                                alt=""
-                              />
-                            </div>
-                            <p className="category-title">{item.name}</p>
-                          </div>
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={Arts}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">Arts & Theater</p>
                         </div>
-                      ))}
+                      </div>
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={Arts}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">Arts & Theater</p>
+                        </div>
+                      </div>
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={Arts}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">Arts & Theater</p>
+                        </div>
+                      </div>
+
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={Business}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">Business & Networking</p>
+                        </div>
+                      </div>
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={Food}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">Food & Drinks</p>
+                        </div>
+                      </div>
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={Music}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">Music</p>
+                        </div>
+                      </div>
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={NIGHTLIFE}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">NIGHTLIFE</p>
+                        </div>
+                      </div>
+                      <div className=" mx-2">
+                        <div className="category-items-box">
+                          <img
+                            className="ticket-category-bg"
+                            src={Sports}
+                            alt=""
+                          />
+                          <img className="ticket-bg" src={TicketIcon} alt="" />
+                          <p className="category-title">Sports & Fitness</p>
+                        </div>
+                      </div>
                     </Slider>
                   </div>
                 </Col>
@@ -288,132 +347,94 @@ const Home = ({ title }) => {
               <img src={EllipseIcon} alt="" /> Events
             </span>
             <Row className="event-box-mobile event-box-mobile-home">
-              {Eventloader ? (
-                <>
-                  <Col md={4} className="mb-5">
-                    <div className="linear-background w-100" style={{ height: '400px' }}> </div>
-                  </Col>
-                  <Col md={4} className="mb-5">
-                    <div className="linear-background w-100" style={{ height: '400px' }}> </div>
-                  </Col>
-                  <Col md={4} className="mb-5">
-                    <div className="linear-background w-100" style={{ height: '400px' }}> </div>
-                  </Col>
-                  <Col md={4} className="mb-5">
-                    <div className="linear-background w-100" style={{ height: '400px' }}> </div>
-                  </Col>
-                  <Col md={4} className="mb-5">
-                    <div className="linear-background w-100" style={{ height: '400px' }}> </div>
-                  </Col>
-                  <Col md={4} className="mb-5">
-                    <div className="linear-background w-100" style={{ height: '400px' }}> </div>
-                  </Col>
-                </>
-              ) : (
-                <>
-                  {Eventlist.length > 0 ? (
-                    <>
-                      {Eventlist.map((item, index) => (
-                        <Col md={4} className="mb-5 cursor-pointer" title="View" onClick={() => viewEvent(item._id, item.name)}>
-                          <Fade bottom>
-                            <div className="event-box-style">
-                              <div className="event-image-part">
-                                <img className="event-image" src={Eventimg} alt="" />
-                                <span className="event-category-img">{item.category_name}</span>
-                                <span className="on-img-date">
-                                  <img src={DateIcon} alt="" />
-                                  <span className="on-img-date-val">{onlyDayMonth(item.start_date)}</span>
-                                </span>
-                              </div>
-                              <div className="organizer-name-sec d-flex align-items-center px-2 py-2">
-                                <div className="d-inline-block mr-3">
-                                  <img
-                                    height={50}
-                                    width={50}
-                                    src={Eventlogo}
-                                    alt=""
-                                    className="organiger-logo"
-                                  />
-                                </div>
-                                <div className="d-inline-block">
-                                  <span className="organizer-by d-block">Organised by</span>
-                                  <span className="organizer-name d-block">{item.organizer_name}</span>
-                                </div>
-                              </div>
-                              <div className="organizer-name-sec px-2 py-2">
-                                <div className="d-inline-flex align-items-center border-right event-time-area">
-                                  <div className="d-inline-block mr-1">
-                                    <img height={30} width={30} src={Timelogo} alt="" />
-                                  </div>
-                                  <div className="d-inline-block">
-                                    <span className="event-duration d-block">
-                                      Event Time
-                                    </span>
-                                    <span className="event-time d-block">{item.start_time}</span>
-                                  </div>
-                                </div>
-                                <div className="d-inline-flex align-items-center">
-                                  <div className="d-inline-block mr-1">
-                                    <img
-                                      height={30}
-                                      width={30}
-                                      src={Hourglasslogo}
-                                      alt=""
-                                    />
-                                  </div>
-                                  <div className="d-inline-block">
-                                    <span className="event-duration d-block">
-                                      Event Duration
-                                    </span>
-                                    <span className="event-time d-block">2Hr 11Min</span>
-                                  </div>
-                                </div>
-                                <div className="event-name">
-                                  <span>{item.display_name}</span>
-                                  <p>
-                                    {shortPer(item.event_desc, 100)}
-                                  </p>
-                                </div>
-                              </div>
-                              <div className="ticket-price-area mt-3">
-                                <Row>
-                                  <Col md={7} xs={7} className="border-top-doted">
-                                    <div className="d-flex align-items-center text-center location-name">
-                                      <img
-                                        height={30}
-                                        width={30}
-                                        src={LocationIcon}
-                                        alt=""
-                                      />{" "}
-                                      <span>{item.location}</span>
-                                    </div>
-                                  </Col>
-                                  <Col md={5} xs={5}>
-                                    <div className="price-section text-center">
-                                      <p>Ticket Price</p>
-                                      <span className="price">${item.displayprice}</span>
-                                      <span className="cut-price">${item.displaycutprice}</span>
-                                    </div>
-                                  </Col>
-                                </Row>
-                              </div>
+              {Eventlist.map((item, index) => (
+                <Col md={4} className="mb-5 cursor-pointer" title="View" onClick={() => viewEvent(item._id, item.name)}>
+                  <Fade bottom>
+                    <div className="event-box-style">
+                      <div className="event-image-part">
+                        <img className="event-image" src={Eventimg} alt="" />
+                        <span className="event-category-img">{item.category_name}</span>
+                        <span className="on-img-date">
+                          <img src={DateIcon} alt="" />
+                          <span className="on-img-date-val">{onlyDayMonth(item.start_date)}</span>
+                        </span>
+                      </div>
+                      <div className="organizer-name-sec d-flex align-items-center px-2 py-2">
+                        <div className="d-inline-block mr-3">
+                          <img
+                            height={50}
+                            width={50}
+                            src={Eventlogo}
+                            alt=""
+                            className="organiger-logo"
+                          />
+                        </div>
+                        <div className="d-inline-block">
+                          <span className="organizer-by d-block">Organised by</span>
+                          <span className="organizer-name d-block">{item.organizer_name}</span>
+                        </div>
+                      </div>
+                      <div className="organizer-name-sec px-2 py-2">
+                        <div className="d-inline-flex align-items-center border-right event-time-area">
+                          <div className="d-inline-block mr-1">
+                            <img height={30} width={30} src={Timelogo} alt="" />
+                          </div>
+                          <div className="d-inline-block">
+                            <span className="event-duration d-block">
+                              Event Time
+                            </span>
+                            <span className="event-time d-block">{item.start_time}</span>
+                          </div>
+                        </div>
+                        <div className="d-inline-flex align-items-center">
+                          <div className="d-inline-block mr-1">
+                            <img
+                              height={30}
+                              width={30}
+                              src={Hourglasslogo}
+                              alt=""
+                            />
+                          </div>
+                          <div className="d-inline-block">
+                            <span className="event-duration d-block">
+                              Event Duration
+                            </span>
+                            <span className="event-time d-block">2Hr 11Min</span>
+                          </div>
+                        </div>
+                        <div className="event-name">
+                          <span>{item.display_name}</span>
+                          <p>
+                            {shortPer(item.event_desc, 100)}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="ticket-price-area mt-3">
+                        <Row>
+                          <Col md={7} xs={7} className="border-top-doted">
+                            <div className="d-flex align-items-center text-center location-name">
+                              <img
+                                height={30}
+                                width={30}
+                                src={LocationIcon}
+                                alt=""
+                              />{" "}
+                              <span>{item.location}</span>
                             </div>
-                          </Fade>
-                        </Col>
-                      ))}
-                    </>
-                  ) : (
-                    <>
-                      <Col md={12}>
-                        <Alert variant="danger">
-                          No records available for the specified category
-                        </Alert>
-                      </Col>
-                    </>
-                  )}
-
-                </>
-              )}
+                          </Col>
+                          <Col md={5} xs={5}>
+                            <div className="price-section text-center">
+                              <p>Ticket Price</p>
+                              <span className="price">${item.displayprice}</span>
+                              <span className="cut-price">${item.displaycutprice}</span>
+                            </div>
+                          </Col>
+                        </Row>
+                      </div>
+                    </div>
+                  </Fade>
+                </Col>
+              ))}
             </Row>
           </div>
         </div>

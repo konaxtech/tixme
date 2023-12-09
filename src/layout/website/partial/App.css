@@ -45,7 +45,7 @@ footer.footer-container {
     background: #fff !important;
     color: #0047AB !important;
     padding: 12px !important;
-    border-radius: 22px !important;
+    border-radius: 1rem !important;
     margin: 0px !important;
 }
 
@@ -59,7 +59,7 @@ footer.footer-container {
 
 .Welcome_to_text {
     font-family: 'Gilroy-Regular', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 41px;
     letter-spacing: 0em;
@@ -123,7 +123,7 @@ p.about_banner_shop_desc {
 }
 
 p.banner_text {
-    font-size: 100px;
+    font-size: 75px;
     line-height: 142px;
     font-weight: 800;
     font-family: 'Gilroy-Bold', Arial, sans-serif;
@@ -136,14 +136,24 @@ p.banner_text {
     color: rgba(0, 71, 171, 1);
 }
 
-
+.ticket-category-bg {
+    position: absolute;
+    top: 0;
+    left: 26px;
+    height: auto;
+    width: 115px;
+    right: auto;
+}
 
 .category-section {
     margin-top: 30px;
-    margin-left: 200px;
+    margin-left: 108px;
 }
 
-
+.category-items-box {
+    position: relative;
+    padding: 50px 0px 0px 0px;
+}
 
 .find-near-box {
     font-family: 'Gilroy-Bold', Arial, sans-serif;
@@ -542,7 +552,7 @@ p.Ticket-title {
     background-repeat: no-repeat;
     background-position: bottom;
     overflow: hidden;
-    padding-bottom: 33px;
+    padding-bottom: 50px;
     padding-left: 20px;
     padding-right: 10px;
 }
@@ -671,9 +681,9 @@ input.theme-input::placeholder {
 .event-list-bg {
     background-position: left;
     background-size: 100% 100%;
-    height: 1520px;
     background-repeat: no-repeat;
-    padding-top: 180px;
+    padding-top: 110px;
+    padding-bottom: 60px;
     position: relative;
 }
 
@@ -686,10 +696,10 @@ input.theme-input::placeholder {
 .event-title-home {
     color: #0047AB;
     font-weight: 600;
-    font-size: 46px;
+    font-size: 36px;
     position: absolute;
     top: 4px;
-    left: 99px;
+    left: 94px;
 }
 
 .left-footer-logo-box {
@@ -944,7 +954,6 @@ img.web-icon-about {
     transform: translate3d(0px, 0px, 0px) scale3d(0, 0, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
 }
-
 .btn-a {
     transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
     transform-style: preserve-3d;
@@ -1110,7 +1119,7 @@ p.contact-desc {
     left: 0;
     z-index: 0;
     width: -webkit-fill-available;
-    top: 25px;
+    top: 35px;
     margin: 0px 50px;
 }
 
@@ -1120,10 +1129,9 @@ p.contact-desc {
 
 .header-logo {
     position: relative;
-    left: 118px;
+    left: 90px;
     height: auto;
     width: 250px;
-    top: -43px;
 }
 
 .container-fluid {
@@ -1142,6 +1150,7 @@ p.contact-desc {
 
 .Find-Near-form {
     margin: 15px 52px 0px 52px;
+    display: flex;
 }
 
 /* .event-box-mobile {
@@ -1199,6 +1208,8 @@ p.category-title {
     font-weight: 600;
     color: #0047ab;
     font-size: 14px;
+    position: relative;
+    right: 31px;
 }
 
 .phone-number-with-code .form-control {
@@ -1271,4 +1282,36 @@ span.cart-price {
     border: 2px solid #0047ab;
     background: none;
     border-radius: 10px;
+}
+
+.header-items {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.header-item-hamburger {
+    width: 33.33%;
+    display: flex;
+    align-items: center;
+    margin-top: -66px;
+}
+
+.header-icons {
+    background: #0047ab;
+    border-radius: 24px;
+    color: #fff;
+    width: 44px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-text-animation {
+    position: relative;
+    height: 120px;
+    overflow: hidden;
 }
