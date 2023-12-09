@@ -136,7 +136,7 @@ const Home = ({ title }) => {
     }, []);
     return (
         <div className="content-data">
-            <div className="signup-form-section mb-5">
+            <div className="signup-form-section mt-5 mb-5">
                 <Container>
                     <Row className="signup-form-box">
                         <Col md={12} className="signup-area signup-page-padding">
@@ -146,7 +146,7 @@ const Home = ({ title }) => {
                                 <Col md={6}>
 
                                     <div className="login-area-sec">
-                                        <h3 className="signup-page-title">Create an account</h3>
+                                        <h3 className="signup-page-title">Create an organizer account</h3>
                                         <p className="signup-page-desc">
                                             Create an account for free
                                         </p>
@@ -192,7 +192,7 @@ const Home = ({ title }) => {
                                                         onChange={selectCountry}
                                                         value={Country}
                                                     />
-
+                                                    
                                                 </div>
                                                 <div className="form-group">
                                                     <p>Message <span className="text-danger">*</span></p>

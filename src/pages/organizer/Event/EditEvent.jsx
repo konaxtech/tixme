@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom';
-import EventForm from '../../../component/event/eventform';
+import EventFormView from '../../../component/event/eventform';
 const Type = ({ title }) => {
     const { id, name } = useParams();
     return (
@@ -12,7 +12,7 @@ const Type = ({ title }) => {
                             <li className="breadcrumb-item">{title}</li>
                         </ol>
                     </div>
-                    <EventForm editid={id} />
+                    <EventFormView editid={id} />
                 </div>
             </div>
 

@@ -47,13 +47,16 @@ const Home = ({ title }) => {
                 .then(data => {
                     setLoader(false);
                     if (data.success == true) {
+                        localStorage.removeItem('userauth');
+                        localStorage.removeItem('user_role');
                         localStorage.setItem('organizerauth', '');
                         localStorage.setItem('organizerid', data.data._id);
+                        localStorage.setItem('organizername', data.data.name);
                         localStorage.setItem('organizer_role', 1);
                         toast.success('Login successful', {
                             duration: 3000,
                         });
-                        navigate(organizer_url+'dashboard');
+                        navigate(organizer_url + 'dashboard');
                     } else {
                         toast.error(data.message);
                     }
@@ -69,7 +72,7 @@ const Home = ({ title }) => {
     };
     return (
         <div className="content-data">
-            <div className="signup-form-section mb-5">
+            <div className="signup-form-section mt-5 mb-5">
                 <Container>
                     <Row className="signup-form-box">
                         <Col md={12} className="login-area signup-page-padding">
@@ -91,7 +94,7 @@ const Home = ({ title }) => {
                                             <p>Password</p>
                                             <input className="form-control" type="password" placeholder="Password" onChange={(e) => setLoginPassword(e.target.value)}></input>
                                         </div>
-                                        <p className="forgot-password-text">Forgot your password? <Link className='reset-password-link'>Reset your password</Link></p>
+                                        {/* <p className="forgot-password-text">Forgot your password? <Link className='reset-password-link'>Reset your password</Link></p> */}
                                         <p className="forgot-password-text">Want to signup as organizer? <Link to={app_url + 'auth/organizer/signup'} className='reset-password-link'>Signup</Link></p>
                                         <div className="form-group">
                                             {Loader ? (

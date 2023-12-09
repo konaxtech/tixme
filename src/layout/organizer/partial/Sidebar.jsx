@@ -43,36 +43,36 @@ const Sidebar = () => {
                                 <span className="nav-text">Event Management</span>
                             </Link>
                         </li>
-                        <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
+                        {/* <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
                             <img src={ticketIcon} alt="Your Logo" />
                             <span className="nav-text">Event Bookings</span>
                         </Link>
-                        </li>
-                        <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
+                        </li> */}
+                        {/* <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
                             <img src={walletIcon} alt="Your Logo" />
                             <span className="nav-text">Finance</span>
                         </Link>
-                        </li>
+                        </li> */}
                         <li onClick={() => d()}><Link to={organizer_url + 'tixme-scanner'} className="ai-icon" aria-expanded="false">
                             <img src={scannerIcon} alt="Your Logo" />
                             <span className="nav-text">Tixme Scanner</span>
                         </Link>
                         </li>
-                        <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
+                        {/* <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
                             <img src={MenuIcon} alt="Your Logo" />
                             <span className="nav-text">Marketing</span>
                         </Link>
-                        </li>
-                        <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
+                        </li> */}
+                        {/* <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
                             <img src={peopleIcon} alt="Your Logo" />
                             <span className="nav-text">Manage Attendees</span>
                         </Link>
-                        </li>
-                        <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
+                        </li> */}
+                        {/* <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
                             <img src={supportIcon} alt="Your Logo" />
                             <span className="nav-text">Support</span>
                         </Link>
-                        </li>
+                        </li> */}
                         <li onClick={() => d()}>
                             <div onClick={Logout} className="ai-icon cursor-pointer" aria-expanded="false">
                                 <img src={DashboardIcon} alt="Your Logo" />

@@ -8,17 +8,17 @@ const Sidebar = () => {
         <>
             <Col md={8} className="pt-3 pb-3 only-pc d-flex align-items-center justify-content-end">
                 <ul className="website_top_menu float-right">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link to={app_url + 'event'}>
                             <span>
                                 Events <img src={Locationstart} />
                             </span>
                         </Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link className="button-join" to={app_url + 'aboutus'}>
                             <span>
-                                About Us
+                                About Us <img src={Locationstart} />
                             </span>
                         </Link>
                     </li>

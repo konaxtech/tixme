@@ -24,6 +24,7 @@ const Sidebar = () => {
     function Logout() {
         localStorage.removeItem('userauth');
         localStorage.removeItem('user_role');
+        localStorage.removeItem('username');
         navigate(app_url);
     }
     return (

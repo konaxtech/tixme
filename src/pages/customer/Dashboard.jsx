@@ -11,7 +11,7 @@ const Dashboard = ({ title }) => {
                         </ol>
                         <span>Welcome Back, TIXME</span>
                     </div>
-                    <div className="row">
+                    <div className="row d-none">
                         <div className="row">
                             <div className="col-md-12">
                                 <h3 className="theme-color mb-3">Your Next Event is in 20 day</h3>

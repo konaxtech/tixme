@@ -510,8 +510,8 @@ const Page = ({ title }) => {
                                                 </div>
                                               </Col>
                                               <Col
-                                                md={6}
-                                                xs={6}
+                                                md={7}
+                                                xs={7}
                                                 className="border-top-doted"
                                               >
                                                 <div className="location d-flex align-items-center text-center">

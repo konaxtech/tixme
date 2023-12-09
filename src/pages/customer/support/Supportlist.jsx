@@ -30,6 +30,7 @@ const Dashboard = ({ title }) => {
 
     const [ReplyMessage, setReplyMessage] = useState();
     const fetchList = async () => {
+        setLoader(true)
         try {
             const requestData = {
                 email: "amit@gmail.com"
@@ -49,12 +50,15 @@ const Dashboard = ({ title }) => {
                     } else {
 
                     }
+                    setLoader(false)
                 })
                 .catch(error => {
                     console.error('Insert error:', error);
+                    setLoader(false)
                 });
         } catch (error) {
             console.error('Login api error:', error);
+            setLoader(false)
         }
 
     }
@@ -194,7 +198,7 @@ const Dashboard = ({ title }) => {
             <Modal isOpen={modal} toggle={() => setModal(!modal)}>
                 <ModalHeader toggle={!modal}>Support</ModalHeader>
                 <ModalBody>
-                    {apiLoader ? (
+                    {apiLoader || Loader ? (
                         <div className="linear-background w-100"> </div>
                     ) : (
                         <>

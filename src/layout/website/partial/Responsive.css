@@ -405,8 +405,10 @@
 
     .mobile-screen {
         display: block;
+        position: relative;
         height: auto;
         width: 75px;
+        margin: 0px -9px !important;
     }
 
     .footer-title {
@@ -427,7 +429,11 @@
 
     a.button-join img {
         height: auto;
-        width: 18px;
+        width: 12px;
+    }
+
+    .mob-sc-css-head-btn {
+        margin-left: -25px;
     }
 
     li.nav-item.mob-sc-css-head-btn-mar {
@@ -1135,9 +1141,11 @@
     .signup-form-section {
         margin-top: 48px;
     }
+
     .partner-slider-margin {
         margin-top: -60px;
     }
+
     .border-top-doted {
         /*margin-left: 16px;*/
     }

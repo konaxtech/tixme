@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AppLogo from '../../../common/logo.svg';
 import Whitestart from '../../../common/icon/whitestart.svg';
+import BluestarBtn from '../../../component/Bluestarbtn';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -18,7 +19,7 @@ import Whitestarbtn from '../../../component/Whitestarbtn';
 import Tada from "react-reveal/Tada";
 import Lottie from "lottie-react";
 import TicketCart from '../../../lotte/ticketcart.json';
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { app_url } from '../../../common/Helpers';
 const Footer = () => {
     const navigate = useNavigate();
@@ -90,14 +91,12 @@ const Footer = () => {
                                     </li>
                                     <li className="nav-item">
                                         <Link className="button-join" to={'/'}>
-                                            <span>
-                                                <span className="bg-style-white btn-a"><img height={30} width={30} src={BluestarIcon} /></span>
-                                                <span className="bg-style-white btn-b">Create Event</span>
-                                                <span className="bg-style-white btn-c"><img height={30} width={30} src={BluestarIcon} /></span>
-                                            </span>
+                                            <Link to={app_url + 'auth/organizer/signup'}>
+                                                <BluestarBtn title={'Create Event'} />
+                                            </Link>
                                         </Link>
                                     </li>
-                                    <li className="nav-item">
+                                    {/* <li className="nav-item">
                                         <Link className="button-join" to={'/'}>
                                             <span>
                                                 <span className="bg-style-white btn-a"><img height={30} width={30} src={BluestarIcon} /></span>
@@ -105,7 +104,7 @@ const Footer = () => {
                                                 <span className="bg-style-white btn-c"><img height={30} width={30} src={BluestarIcon} /></span>
                                             </span>
                                         </Link>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </Col>
                         </Row>
@@ -133,7 +132,7 @@ const Footer = () => {
                                         </ul>
                                     </div>
                                     <div className="footer-short-text">
-                                        <p>© 2023 Eventbrite</p>
+                                        <p>© 2023 Tixme</p>
                                     </div>
                                 </div>
                             </Col>
@@ -142,20 +141,20 @@ const Footer = () => {
                                     <Col md={6}>
                                         <span className="footer-box-style-title">Find Events</span>
                                         <ul>
-                                            <li>Browse Online Events</li>
-                                            <li>Get the Eventbrite App</li>
+                                            {/* <li>Browse Online Events</li> */}
                                             <li><Link to={app_url + 'raise-ticket'}>Customer support</Link></li>
                                         </ul>
                                     </Col>
                                     <Col md={6}>
                                         <span className="footer-box-style-title">Connect With Us</span>
                                         <ul>
-                                            <li>Report This Event</li>
-                                            <li>Help Center</li>
-                                            <li>Terms</li>
-                                            <li>Privacy</li>
-                                            <li>Accessibility</li>
-                                            <li>Community Guidelines</li>
+                                            {/* <li>Report This Event</li>
+                                            <li>Help Center</li> */}
+                                            <li><Link className="text-dark" to={app_url + 'terms-and-conditions'}>Terms</Link></li>
+                                            <li><Link className="text-dark" to={app_url + 'privacy-policy'}>Privacy</Link></li>
+                                            <li><Link className="text-dark" to={app_url + 'faq'}>FAQ</Link></li>
+                                            {/* <li>Accessibility</li>
+                                            <li>Community Guidelines</li> */}
                                         </ul>
                                     </Col>
                                 </Row>

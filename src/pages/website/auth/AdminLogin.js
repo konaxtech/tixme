@@ -64,7 +64,7 @@ const Home = ({ title }) => {
     };
     return (
         <div className="content-data">
-            <div className="signup-form-section mb-5">
+            <div className="signup-form-section mt-5 mb-5">
                 <Container>
                     <Row className="signup-form-box">
                         <Col md={12} className="login-area signup-page-padding">

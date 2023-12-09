@@ -21,10 +21,13 @@
   padding: 7px 14px !important;
   border-radius: 12px !important;
 }
-
+.button-join-white .bg-style {
+  background: #fff !important;
+  color: #0047AB  !important;
+}
 .button-join .bg-style {
   background: #0047AB;
-  color: #fff !important;
+  color: #fff;
   padding: 9px 15px !important;
   border-radius: 1rem;
   margin: 0px !important;
@@ -517,14 +520,16 @@ span.flatpickr-weekday {
 }
 
 .hobby-box {
-  border: 1px solid #000;
-  margin: 0px 10px;
+  border: 1px solid #a9a9a9;
+  margin: 10px 3px;
   padding: 2px 10px;
   border-radius: 15px;
   color: #0046ab;
-  font-weight: 500;
+  font-weight: 400;
   text-transform: capitalize;
   cursor: pointer;
+  font-size: 18px;
+  display: inline-block;
 }
 .hobby-active {
   background: #0047ab;

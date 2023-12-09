@@ -1,8 +1,4 @@
 import React from "react";
-import DashboardIcon from '../../../common/icon/dashboardicon.svg';
-import LocationsIcon from '../../../common/icon/locations.svg';
-import Locationstart from '../../../common/icon/locationstart.svg';
-import PersonIcon from '../../../common/icon/person 1.svg';
 import WhitestarBtn from '../../../component/Whitestarbtn';
 import { Link } from "react-router-dom";
 import { organizer_url, app_url, customer_url } from '../../../common/Helpers';

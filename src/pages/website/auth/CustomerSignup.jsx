@@ -328,7 +328,7 @@ const Home = ({ title }) => {
     }
     const toggleHobby = (id) => {
         const updatedHobbies = [...selectedHobbies];
-
+        console.log("s",updatedHobbies);
         if (updatedHobbies.includes(id)) {
             // Hobby is already selected, remove it
             const index = updatedHobbies.indexOf(id);
@@ -347,7 +347,7 @@ const Home = ({ title }) => {
     }, []);
     return (
         <div className="content-data">
-            <div className="signup-form-section mb-5">
+            <div className="signup-form-section mt-5 mb-5">
                 <Container>
                     <Row className="signup-form-box signup-area signup-page-padding">
                     <Col md={3}></Col>
@@ -483,7 +483,7 @@ const Home = ({ title }) => {
                                             <WhitestarBtn title={'Please wait...'} />
                                         ) : (
                                             <div className="form-group">
-                                                <span style={{paddingLeft: "25px"}} onClick={HandelCustomersignup}>
+                                                <span onClick={HandelCustomersignup}>
                                                     <WhitestarBtn title={'Create Account'} />
                                                 </span>
                                             </div>

@@ -75,7 +75,11 @@ const Home = ({ title }) => {
                 .then(data => {
                     setLoader(false);
                     if (data.success == true) {
+                        localStorage.removeItem('organizerauth');
+                        localStorage.removeItem('organizerid');
+                        localStorage.removeItem('organizer_role');
                         localStorage.setItem('userauth', data.token);
+                        localStorage.setItem('username', data.username);
                         localStorage.setItem('user_role', 1);
                         toast.success('Login successful', {
                             duration: 3000,
@@ -190,7 +194,7 @@ const Home = ({ title }) => {
                 last_name: Lastname,
                 email: Email,
                 phone_number: Phonenumber,
-                hobbies:selectedHobbies,
+                hobbies: selectedHobbies,
                 area_code: "+91",
                 whatsapp_no: WhatsappNumber ? WhatsappNumber : '',
                 address: Address1 ? Address1 : '',
@@ -347,11 +351,11 @@ const Home = ({ title }) => {
     }, []);
     return (
         <div className="content-data">
-            <div className="signup-form-section mb-5">
+            <div className="signup-form-section mt-5 mb-5">
                 <Container>
                     <Row className="signup-form-box login-area signup-page-padding">
-                    <Col md={3}></Col>
-                        <Col md={6} className="p-0">
+                        <Col md={3}></Col>
+                        <Col md={6} className="">
                             <div className="login-area-sec">
                                 <h3 className="signup-page-title">Welcome back</h3>
                                 <p className="signup-page-desc">
@@ -367,7 +371,7 @@ const Home = ({ title }) => {
                                     <p>Password</p>
                                     <input className="form-control" type="password" placeholder="Password" onChange={(e) => setLoginPassword(e.target.value)}></input>
                                 </div>
-                                <p className="forgot-password-text">Forgot your password? <Link className='reset-password-link'>Reset your password</Link></p>
+                                {/* <p className="forgot-password-text">Forgot your password? <Link className='reset-password-link'>Reset your password</Link></p> */}
 
                                 <p className="forgot-password-text">Don't have an account? <Link to={app_url + 'auth/customer/signup'} className='reset-password-link'>Signup</Link></p>
 
@@ -390,7 +394,7 @@ const Home = ({ title }) => {
                                     <Row>
                                         <Col md={12}>
                                             <button className="login-with-btn mx-1" onClick={handleGoogleLogin}><img src={GoogleLogo}></img></button>
-                                            <button className="login-with-btn mx-1" onClick={handleFacebookLogin}><img src={FacebookLogo}></img></button>
+                                            {/* <button className="login-with-btn mx-1" onClick={handleFacebookLogin}><img src={FacebookLogo}></img></button> */}
                                         </Col>
 
                                     </Row>

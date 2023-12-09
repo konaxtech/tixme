@@ -24,7 +24,7 @@ import "flatpickr/dist/themes/material_green.css";
 import Lottie from "lottie-react";
 import TicketLotte from '../../lotte/ticketanimation.json';
 import TimezoneSelect from 'react-timezone-select'
-import { organizer_url, apiurl, get_date_time } from '../../common/Helpers';
+import { organizer_url, apiurl, get_date_time, get_min_date } from '../../common/Helpers';
 import {
     Modal,
     Input,
@@ -239,14 +239,15 @@ const Type = ({ title, editid }) => {
                 event_subtype_id: EventSubtype,
                 start_date: startdate,
                 start_time: starttime,
+                start_mindate: get_min_date(Startdateselect),
                 end_date: Enddate,
                 end_time: Rndtime,
+                end_mindate: get_min_date(Enddateselect),
                 start_data_min: Startdateselect,
                 end_data_min: Enddateselect,
                 is_clock_countdown: IsclockCountdown,
                 display_start_time: Displaystarttime,
                 display_end_time: Displayendtime,
-                organizer_id: organizerid,
                 countryname: Countryname,
                 currencycode: CurrencyId,
                 countrysymbol: Currencyname,
@@ -324,9 +325,9 @@ const Type = ({ title, editid }) => {
             setLoader(true);
             var event_type_name = '';
             if (Eventtype == 1) {
-                var event_type_name = 'Online Event';
-            } else {
                 var event_type_name = 'Offline Event';
+            } else {
+                var event_type_name = 'Online Event';
             }
             if (!Displayprice || !Displaycutprice || !Name || !Displayname || !CategoryId || !Categoryname || !Location || !Countryname || !Currencyname || !selectedTimezone) {
                 return toast.error("All field required");
@@ -334,6 +335,8 @@ const Type = ({ title, editid }) => {
             const requestData = {
                 isdelete: 0,
                 status: 0,
+                start_mindate: get_min_date(Startdateselect),
+                end_mindate: get_min_date(Enddateselect),
                 displayprice: Displayprice,
                 displaycutprice: Displaycutprice,
                 eventtype: Eventtype,
@@ -849,7 +852,7 @@ const Type = ({ title, editid }) => {
                                         <div className="tab-button-box">
                                             <span onClick={() => setEventtype(1)} className={Eventtype == 1 ? "tab-button-active" : "tab-button-grey-active"}>Venue</span>
                                             <span onClick={() => setEventtype(2)} className={Eventtype == 2 ? "tab-button-active" : "tab-button-grey-active"}> Online Event</span>
-                                            <span onClick={() => setEventtype(3)} className={Eventtype == 3 ? "tab-button-active" : ""}>To be announced</span>
+                                            {/* <span onClick={() => setEventtype(3)} className={Eventtype == 3 ? "tab-button-active" : ""}>To be announced</span> */}
                                         </div>
                                     </div>
                                     <div className="col-md-12 mt-4"></div>

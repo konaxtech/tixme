@@ -27,6 +27,7 @@ const Dashboard = ({ title }) => {
     const [TransferId, setTransferId] = useState();
     const fetchList = async () => {
         try {
+            setLoader(true)
             fetch(apiurl + 'order/customer/list', {
                 method: 'POST',
                 headers: {
@@ -38,16 +39,17 @@ const Dashboard = ({ title }) => {
                 .then(data => {
                     if (data.success == true) {
                         setListitems(data.data);
-                        setLoader(false)
                     } else {
-
                     }
+                    setLoader(false)
                 })
                 .catch(error => {
                     console.error('Insert error:', error);
+                    setLoader(false)
                 });
         } catch (error) {
             console.error('Login api error:', error);
+            setLoader(false)
         }
 
     }
@@ -155,7 +157,7 @@ const Dashboard = ({ title }) => {
             <Modal className="ticket-view-page" isOpen={modal} toggle={() => setModal(!modal)}>
                 <ModalHeader toggle={!modal}>View tickets</ModalHeader>
                 <ModalBody>
-                    {apiLoader ? (
+                    {Loader ? (
                         <div className="linear-background w-100"> </div>
                     ) : (
                         <>

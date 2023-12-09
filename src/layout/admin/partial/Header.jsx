@@ -17,7 +17,7 @@ const Header = () => {
                             <ul className="navbar-nav header-right">
 
                                 <li className="nav-item dropdown notification_dropdown">
-                                <Link to={'/'}><span className=""> <img src={DashboardIcon} alt="Your Logo" /> Dashboard</span></Link>
+                                    <Link to={'/'}><span className=""> <img src={DashboardIcon} alt="Your Logo" /> Dashboard</span></Link>
                                 </li>
                                 <li className="nav-item dropdown notification_dropdown">
                                     <Link className="button-border" to={'/'}>
@@ -41,4 +41,5 @@ const Header = () => {
         </>
     )
 }
+
 export default Header;
