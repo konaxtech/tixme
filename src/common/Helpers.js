@@ -9,6 +9,7 @@ export const apiurl = 'https://nodejsapidev.vercel.app/api/v1/';
 // export const apiurl = 'http://localhost:5001/api/v1/';
 export function isEmail(email) {
     var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    
     return regex.test(email);
 }
 export const get_date_time = (date) => {
