@@ -1279,3 +1279,7 @@ span.cart-price {
     background: none;
     border-radius: 10px;
 }
+.HeartIcon {
+    font-size: 32px;
+    color: #0047ab;
+}

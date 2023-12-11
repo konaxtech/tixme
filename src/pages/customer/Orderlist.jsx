@@ -256,40 +256,55 @@ const Dashboard = ({ title }) => {
                                 <Card.Body>
                                     <Row className="justify-content-center">
                                         <Col md={12}>
-                                            <div class="table-responsive">
-                                                {Loader ? (
-                                                    <div className="linear-background w-100"> </div>
-                                                ) : (
-                                                    <table class="table table-responsive-md">
-                                                        <thead>
-                                                            <tr>
-                                                                <th style={{ width: '80px' }}><strong>#</strong></th>
-                                                                <th><strong>Date</strong></th>
-                                                                <th><strong>Amount</strong></th>
-                                                                <th><strong>Transaction Id</strong></th>
-                                                                <th><strong>Payment Status</strong></th>
-                                                                <th><strong>View Tickets</strong></th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            {Listitems.map((item, index) => (
-                                                                <tr>
-                                                                    <td>
-                                                                        <strong>{index + 1}</strong>
-                                                                    </td>
-                                                                    <td>{item.date} {item.time}</td>
-                                                                    <td>{item.amount}</td>
-                                                                    <td>{item.tnsid}</td>
-                                                                    <td><span class="badge light badge-success">Success</span></td>
-                                                                    <td>
-                                                                        <button type="button" onClick={() => Handelviewmodal(item._id)} class="btn btn-rounded btn-success">View Tickets</button>
-                                                                    </td>
-                                                                </tr>
-                                                            ))}
-                                                        </tbody>
-                                                    </table>
-                                                )}
-                                            </div>
+                                            {Loader ? (
+                                                <div className="linear-background w-100"> </div>
+                                            ) : (
+                                                <>
+                                                    {Listitems.length > 0 ? (
+                                                        <>
+                                                            <div class="table-responsive">
+                                                                {Loader ? (
+                                                                    <div className="linear-background w-100"> </div>
+                                                                ) : (
+                                                                    <table class="table table-responsive-md">
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th style={{ width: '80px' }}><strong>#</strong></th>
+                                                                                <th><strong>Date</strong></th>
+                                                                                <th><strong>Amount</strong></th>
+                                                                                <th><strong>Transaction Id</strong></th>
+                                                                                <th><strong>Payment Status</strong></th>
+                                                                                <th><strong>View Tickets</strong></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            {Listitems.map((item, index) => (
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        <strong>{index + 1}</strong>
+                                                                                    </td>
+                                                                                    <td>{item.date} {item.time}</td>
+                                                                                    <td>{item.amount}</td>
+                                                                                    <td>{item.tnsid}</td>
+                                                                                    <td><span class="badge light badge-success">Success</span></td>
+                                                                                    <td>
+                                                                                        <button type="button" onClick={() => Handelviewmodal(item._id)} class="btn btn-rounded btn-success">View Tickets</button>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            ))}
+                                                                        </tbody>
+                                                                    </table>
+                                                                )}
+                                                            </div>
+                                                        </>
+                                                    ) : (
+                                                        <div class="no-data-box">
+                                                            <p>No Data Found !</p>
+                                                        </div>
+                                                    )}
+                                                </>
+                                            )}
+
                                         </Col>
                                     </Row>
                                 </Card.Body>

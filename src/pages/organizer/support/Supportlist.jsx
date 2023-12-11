@@ -33,12 +33,15 @@ const Dashboard = ({ title }) => {
     const fetchList = async () => {
         setLoader(true)
         try {
-            fetch(apiurl + 'website/customer/support/list', {
+            const requestData = {
+                id: OrganizerId
+            };
+            fetch(apiurl + 'website/organizer/support/list', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json', // Set the Content-Type header to JSON
-                    'Authorization': `Bearer ${Beartoken}`,
-                }
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData)
             })
                 .then(response => response.json())
                 .then(data => {
@@ -339,9 +342,7 @@ const Dashboard = ({ title }) => {
                         {Loader ? (
                             <Button className='signup-page-btn'>Please wait...</Button>
                         ) : (
-                            <>
-                                <span onClick={Handelform}><WhiteButton title={'Submit'} /></span>
-                            </>
+                            <span onClick={HandelOrganizerform}><WhiteButton title={'Submit'} /></span>
                         )}
                     </div>
                 </ModalBody>

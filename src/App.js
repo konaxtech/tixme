@@ -21,11 +21,13 @@ import CustomerDashboard from './pages/customer/Dashboard';
 import CustomerSupportlist from './pages/customer/support/Supportlist';
 import CustomerOrderlist from './pages/customer/Orderlist';
 import FollowingList from './pages/customer/FollowingList';
+import SavedeventsList from './pages/customer/SavedeventsList';
 import CustomerProfile from './pages/customer/CustomerProfile';
 import CustomerLayout from './layout/customer/Layout'
 // Organizer
 import Dashboard from './pages/organizer/Dashboard';
 import Analytics from './pages/organizer/analytics';
+import OrganizerSupportlist from './pages/organizer/support/Supportlist';
 import EventType from './pages/organizer/Event/EventCreateForm';
 import EditEvent from './pages/organizer/Event/EditEvent';
 import EventView from './pages/organizer/Event/EventView';
@@ -101,12 +103,14 @@ function App() {
           <Route path={customer_url + 'my-order-list'} element={<CustomerLayout> <CustomerOrderlist title={'All Order List'} /> </CustomerLayout>} />
           <Route path={customer_url + 'my-profile'} element={<CustomerLayout> <CustomerProfile title={'My profile'} /> </CustomerLayout>} />
           <Route path={customer_url + 'following'} element={<CustomerLayout> <FollowingList title={'My following'} /> </CustomerLayout>} />
+          <Route path={customer_url + 'savedevents'} element={<CustomerLayout> <SavedeventsList title={'My saved event'} /> </CustomerLayout>} />
           {/* Organizer */}
           <Route path={organizer_url + 'dashboard'} element={<OrganizerLayout> <Dashboard title={'Organizer Dashboard'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'event/add-event'} element={<OrganizerLayout> <EventType title={'Create new event'} /> </OrganizerLayout>} />
           <Route path={`${organizer_url}event/edit-event/:id/:name`} element={<OrganizerLayout> <EditEvent title={'Edit event'} /> </OrganizerLayout>} />
           <Route path={`${organizer_url}event/view-event/:id/:name`} element={<OrganizerLayout> <EventView title={'Event details'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'event/all-event-list'} element={<OrganizerLayout> <EventList title={'All event list'} /> </OrganizerLayout>} />
+          <Route path={organizer_url + 'support-tickets'} element={<OrganizerLayout> <OrganizerSupportlist title={'Support Tickets'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'tixme-scanner'} element={<OrganizerLayout> <Tixmescanner title={'Tixme scanner'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'tixme-scanner-page'} element={<OrganizerLayout> <Tixmescannerpage title={'Tixme scanner'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'tixme-validate'} element={<OrganizerLayout> <Qrvalidation title={'QR validate'} /> </OrganizerLayout>} />

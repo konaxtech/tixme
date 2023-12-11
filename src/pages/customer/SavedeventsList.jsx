@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 import withReactContent from 'sweetalert2-react-content'
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import QRCode from 'react-qr-code';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Dashboard = ({ title }) => {
     const navigate = useNavigate();
     const Beartoken = localStorage.getItem('userauth');
@@ -16,26 +16,26 @@ const Dashboard = ({ title }) => {
     const MySwal = withReactContent(Swal);
     function CheckDelete(id) {
         MySwal.fire({
-            title: 'Are you sure you want to unfollow?',
+            title: 'Are you sure you want to remove?',
             showDenyButton: true,
             showCancelButton: false,
             confirmButtonText: 'Yes',
         }).then((result) => {
             /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
-                Unfollow(id)
+                deleteData(id)
             } else if (result.isDenied) {
 
             }
         })
     }
-    const Unfollow = async (organizerid) => {
+    const deleteData = async (id) => {
         try {
             setLoader(true)
             const requestData = {
-                organizerid: organizerid
+                id: id
             }
-            fetch(apiurl + "website/follow-organizer", {
+            fetch(apiurl + "website/delete-saved-event", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -47,6 +47,7 @@ const Dashboard = ({ title }) => {
                 .then((data) => {
                     if (data.success == true) {
                         fetchList()
+                        toast.error("Removed");
                     } else {
 
                     }
@@ -62,7 +63,7 @@ const Dashboard = ({ title }) => {
     const fetchList = async () => {
         try {
             setLoader(true)
-            fetch(apiurl + 'website/following-organizer-list', {
+            fetch(apiurl + 'website/savedevents-list', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -88,7 +89,9 @@ const Dashboard = ({ title }) => {
 
     }
 
-
+    const viewEvent = async (id, name) => {
+        navigate(`${app_url}event/${id}/${name}`);
+    }
     useEffect(() => {
         if (!Beartoken) {
             toast.error("Login to your account");
@@ -126,8 +129,10 @@ const Dashboard = ({ title }) => {
                                                                         <thead>
                                                                             <tr>
                                                                                 <th style={{ width: '80px' }}><strong>#</strong></th>
-                                                                                <th><strong>Organizer name</strong></th>
-                                                                                <th><strong>Organizer email</strong></th>
+                                                                                <th><strong>Name</strong></th>
+                                                                                <th><strong>Start Date / Time</strong></th>
+                                                                                <th><strong>End Date / Time</strong></th>
+                                                                                <th><strong>View</strong></th>
                                                                                 <th><strong>Action</strong></th>
                                                                             </tr>
                                                                         </thead>
@@ -137,10 +142,14 @@ const Dashboard = ({ title }) => {
                                                                                     <td>
                                                                                         <strong>{index + 1}</strong>
                                                                                     </td>
-                                                                                    <td>{item.organizername}</td>
-                                                                                    <td>{item.organizeremail}</td>
+                                                                                    <td>{item.eventname}</td>
+                                                                                    <td>{item.start_date} {item.start_time}</td>
+                                                                                    <td>{item.end_date} {item.end_time}</td>
                                                                                     <td>
-                                                                                        <button onClick={() => CheckDelete(item.organizerid)} type="button" class="btn btn-danger">Unfollow</button>
+                                                                                        <button onClick={() => viewEvent(item.eventid, item.eventname)} type="button" class="btn btn-success">View</button>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <button onClick={() => CheckDelete(item._id)} type="button" class="btn btn-danger">Remove</button>
                                                                                     </td>
                                                                                 </tr>
                                                                             ))}

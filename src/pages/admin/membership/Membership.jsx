@@ -217,8 +217,8 @@ const Dashboard = ({ title }) => {
                                 <input placeholder="Plan purchase amount" class="form-control" value={planpurchaseamount} onChange={(e) => setplanpurchaseamount(e.target.value)} />
                             </div>
                             <div className="form-group">
-                                <p>Discount amount (%)<span className="text-danger">*</span></p>
-                                <input placeholder="Plan purchase amount" class="form-control" value={Discountamount} onChange={(e) => setDiscountamount(e.target.value)} />
+                                <p>Reward point<span className="text-danger">*</span></p>
+                                <input placeholder="Plan Reward point" class="form-control" value={Discountamount} onChange={(e) => setDiscountamount(e.target.value)} />
                             </div>
                         </Col>
                         {BtnLoader ? (
@@ -272,7 +272,7 @@ const Dashboard = ({ title }) => {
                                                                 <th style={{ width: '80px' }}><strong>#</strong></th>
                                                                 <th><strong>Plan name</strong></th>
                                                                 <th><strong>Purchase amount</strong></th>
-                                                                <th><strong>Discount</strong></th>
+                                                                <th><strong>Reward points</strong></th>
                                                                 <th><strong>Total User</strong></th>
                                                                 <th></th>
                                                             </tr>
@@ -283,7 +283,7 @@ const Dashboard = ({ title }) => {
                                                                     <td><strong>{index + 1}</strong></td>
                                                                     <td><strong className="text-capitalize">{item.name}</strong></td>
                                                                     <td>{item.purchase_amount}</td>
-                                                                    <td>{item.discount_amount} (%)</td>
+                                                                    <td>{item.discount_amount}</td>
                                                                     <td>{item.userCount}</td>
                                                                     <td>
                                                                         <div class="dropdown">

@@ -47,7 +47,7 @@ const Footer = () => {
     }
     return (
         <>
-            {ShowCart ? (<Lottie className="cart-box-show" onClick={() => viewcart()} title="View Cart" animationData={TicketCart} style={lottewidth} />) : ''}
+            {/* {ShowCart ? (<Lottie className="cart-box-show" onClick={() => viewcart()} title="View Cart" animationData={TicketCart} style={lottewidth} />) : ''} */}
             <Container>
                 <div className="subsacribe-box">
                     <Tada><img src={LogoIcon} className="LogoIcon-footer" alt="" /></Tada>

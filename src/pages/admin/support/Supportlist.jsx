@@ -258,6 +258,7 @@ const Dashboard = ({ title }) => {
                                                         <thead>
                                                             <tr>
                                                                 <th style={{ width: '80px' }}><strong>#</strong></th>
+                                                                <th><strong>User type</strong></th>
                                                                 <th><strong>User email</strong></th>
                                                                 <th><strong>Date</strong></th>
                                                                 <th><strong>Title</strong></th>
@@ -270,6 +271,13 @@ const Dashboard = ({ title }) => {
                                                             {Listitems.map((item, index) => (
                                                                 <tr>
                                                                     <td><strong>{index + 1}</strong></td>
+                                                                    <td>
+                                                                        {item.usertype == "customer" ? (
+                                                                            <span class="badge badge-xs light badge-success">{item.usertype}</span>
+                                                                        ) : (
+                                                                            <span class="badge badge-xs light badge-primary">{item.usertype}</span>
+                                                                        )}
+                                                                    </td>
                                                                     <td>{item.email}</td>
                                                                     <td>{item.date}</td>
                                                                     <td>{item.title}</td>

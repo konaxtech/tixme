@@ -47,6 +47,11 @@ const Sidebar = () => {
                             <span className="nav-text">Following</span>
                         </Link>
                         </li>
+                        <li onClick={() => d()}><Link to={customer_url+ 'savedevents'} className="ai-icon" aria-expanded="false">
+                            <img src={supportIcon} alt="Your Logo" />
+                            <span className="nav-text">saved Events</span>
+                        </Link>
+                        </li>
                         <li onClick={() => d()}><Link to={customer_url+ 'support-tickets'} className="ai-icon" aria-expanded="false">
                             <img src={supportIcon} alt="Your Logo" />
                             <span className="nav-text">Support</span>

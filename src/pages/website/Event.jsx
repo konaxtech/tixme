@@ -11,6 +11,7 @@ import LocationIcon from "../../common/icon/location.svg";
 import Eventimg from "../../common/event.jpg";
 import DateIcon from "../../common/icon/date 2.svg";
 import MapIcon from "../../common/icon/mapicon.svg";
+import { BsHeart, BsFillHeartFill } from "react-icons/bs";
 import HeartIcon from "../../common/icon/heart.svg";
 import ShareIcon from "../../common/icon/share.svg";
 import EventImg from "../../common/event1.png";
@@ -33,21 +34,68 @@ const Page = ({ title }) => {
   const { id, name } = useParams();
   const navigate = useNavigate();
   const [Apiloader, setApiloader] = useState(true);
+  const [FollowApi, setFollowApi] = useState(false);
+  const [Eventsaveapi, setEventsaveapi] = useState(false);
   const [isFirstRender, setIsFirstRender] = useState(false);
   const [Eventdata, setEventdata] = useState();
   const [Followtype, setFollowtype] = useState(false);
+  const [IssaveEvent, setIssaveEvent] = useState(false);
   const [Followtypeloader, setFollowtypeloader] = useState(false);
   const [Organizerdata, setOrganizerdata] = useState();
   const [Paynowbtnstatus, setPaynowbtnstatus] = useState(true);
   const [Eventlist, setEventlist] = useState([]);
   const [OrganizerEventlist, setOrganizerEventlist] = useState([]);
 
+
+  const SaveEvent = async (id) => {
+    try {
+      if (!Beartoken) {
+        toast.error("You need to login first");
+        return false;
+      }
+      const requestData = {
+        eventid: id
+      }
+      fetch(apiurl + "website/save-event", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'Authorization': `Bearer ${Beartoken}`, // Set the Content-Type header to JSON
+        },
+        body: JSON.stringify(requestData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success == true) {
+            if (data.typestatus == 1) {
+              // 1 = not saved
+              toast.success("Removed");
+              setIssaveEvent(false);
+            } else if (data.typestatus == 2) {
+              // 2 = saved
+              toast.success("saved");
+              setIssaveEvent(true);
+            } else {
+              toast.error("Internal Server Error");
+            }
+          } else {
+
+          }
+        })
+        .catch((error) => {
+          console.error("Insert error:", error);
+        });
+    } catch (error) {
+      console.error("Login api error:", error);
+    }
+  }
   const followOrganizer = async () => {
     try {
       if (!Beartoken) {
         toast.error("You need to login first");
         return false;
       }
+      setFollowApi(true)
       const requestData = {
         organizerid: Organizerdata._id
       }
@@ -72,6 +120,7 @@ const Page = ({ title }) => {
             } else {
               toast.error("Internal Server Error");
             }
+            setFollowApi(false)
 
           } else {
 
@@ -79,16 +128,17 @@ const Page = ({ title }) => {
         })
         .catch((error) => {
           console.error("Insert error:", error);
+          setFollowApi(false)
         });
     } catch (error) {
       console.error("Login api error:", error);
+      setFollowApi(false)
     }
   }
   const checkfollowOrganizer = async (organizer_id) => {
     try {
       setFollowtypeloader(true)
       const userBeartoken = localStorage.getItem('userauth');
-      console.log(userBeartoken);
       const requestData = {
         organizerid: organizer_id
       }
@@ -102,7 +152,6 @@ const Page = ({ title }) => {
       })
         .then((response) => response.json())
         .then((data) => {
-          console.warn("sss", data);
           if (data.success == true) {
             setFollowtype(true)
           } else {
@@ -116,6 +165,39 @@ const Page = ({ title }) => {
     } catch (error) {
       console.error("Login api error:", error);
       setFollowtypeloader(false)
+    }
+  }
+  const checkSaveevent = async (eventid) => {
+    try {
+      setEventsaveapi(true)
+      const userBeartoken = localStorage.getItem('userauth');
+      const requestData = {
+        eventid: eventid
+      }
+      fetch(apiurl + "website/check-save-event", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          'Authorization': `Bearer ${userBeartoken}`, // Set the Content-Type header to JSON
+        },
+        body: JSON.stringify(requestData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success == true) {
+            setIssaveEvent(true)
+          } else {
+            setIssaveEvent(false)
+          }
+          setEventsaveapi(false)
+        })
+        .catch((error) => {
+          console.error("Insert error:", error);
+          setEventsaveapi(false)
+        });
+    } catch (error) {
+      console.error("Login api error:", error);
+      setEventsaveapi(false)
     }
   }
   const viewEvent = async (id, name) => {
@@ -140,6 +222,7 @@ const Page = ({ title }) => {
             if (data.data.organizer_id) {
               fetchOrganizerEvent(data.data.organizer_id);
               checkfollowOrganizer(data.data.organizer_id);
+              checkSaveevent(data.data._id);
             }
             if (data.data) {
               setApiloader(false)
@@ -223,9 +306,10 @@ const Page = ({ title }) => {
             if (data.data.organizer_id) {
               checkfollowOrganizer(data.data.organizer_id);
               fetchOrganizerEvent(data.data.organizer_id);
+              checkSaveevent(data.data._id)
               setOrganizerdata(data.organizer)
               window.scrollTo(0, 0);
-              
+
             }
             if (data.data) {
               setApiloader(false)
@@ -448,10 +532,16 @@ const Page = ({ title }) => {
                 </div>
                 <Row className="mt-5">
                   <Col md={12}>
-                    <span className="float-right">
-                      <img className="mx-1" src={HeartIcon} alt="" />
-                      <img className="mx-1" src={ShareIcon} alt="" />
-                    </span>
+                    {Eventsaveapi ? '' : (
+                      <span className="float-right">
+                        {IssaveEvent ? (
+                          <BsFillHeartFill onClick={() => SaveEvent(Eventdata._id)} className="HeartIcon cursor-pointre" />
+                        ) : (
+                          <BsHeart onClick={() => SaveEvent(Eventdata._id)} className="HeartIcon cursor-pointre" />
+                        )}
+                        <img className="mx-1" src={ShareIcon} alt="" />
+                      </span>
+                    )}
                   </Col>
                   <Col md={12}>
                     <img className="mt-2 event-banner" src={EventImg} alt="" />
@@ -680,14 +770,22 @@ const Page = ({ title }) => {
                               <p className="followers-count">{Organizerdata.followers ? Organizerdata.followers : 0}</p>
                             </div>
                             <div className="d-inline-block">
-                              {Followtype ? (
-                                <button onClick={() => followOrganizer()} type="button" className="following-btn">
-                                  Following
+                              {FollowApi ? (
+                                <button type="button" className="follow-btn">
+                                  Please wait...
                                 </button>
                               ) : (
-                                <button onClick={() => followOrganizer()} type="button" className="follow-btn">
-                                  Follow
-                                </button>
+                                <>
+                                  {Followtype ? (
+                                    <button onClick={() => followOrganizer()} type="button" className="following-btn">
+                                      Following
+                                    </button>
+                                  ) : (
+                                    <button onClick={() => followOrganizer()} type="button" className="follow-btn">
+                                      Follow
+                                    </button>
+                                  )}
+                                </>
                               )}
                             </div>
                           </div>

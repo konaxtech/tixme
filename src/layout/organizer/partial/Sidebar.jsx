@@ -68,11 +68,11 @@ const Sidebar = () => {
                             <span className="nav-text">Manage Attendees</span>
                         </Link>
                         </li> */}
-                        {/* <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
+                        <li><Link to={organizer_url+ 'support-tickets'} className="ai-icon" aria-expanded="false">
                             <img src={supportIcon} alt="Your Logo" />
                             <span className="nav-text">Support</span>
                         </Link>
-                        </li> */}
+                        </li>
                         <li onClick={() => d()}>
                             <div onClick={Logout} className="ai-icon cursor-pointer" aria-expanded="false">
                                 <img src={DashboardIcon} alt="Your Logo" />
