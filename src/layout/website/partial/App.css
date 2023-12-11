@@ -172,7 +172,7 @@ p.banner_text {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-size: 70px;
+    font-size: 42px;
     font-family: 'Gilroy-Bold', Arial, sans-serif;
     font-weight: 600;
 }
