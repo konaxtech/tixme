@@ -37,7 +37,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { apiurl, onlyDayMonth, shortPer, app_url } from "../../common/Helpers";
 import { useTransition, animated } from 'react-spring';
 import Lottie from 'react-lottie';
-import animationData from '../../../src/animation-data.json'; 
+import animationData from '../../../src/animation-data.json'; ; 
 const Home = ({ title }) => {
   const [Eventlist, setEventlist] = useState([]);
   const [Listitems, setListitems] = useState([]);
@@ -231,6 +231,8 @@ const Home = ({ title }) => {
         </div>
         <div className="mb-5">
           <div>
+          {/* <Lottie options={defaultOptions} className="event-list-bg-main" /> */}
+          </div>
             <div className="find-nearby-section">
               <Row>
                 <Col md={12}>
@@ -350,7 +352,6 @@ const Home = ({ title }) => {
                 </Col>
               </Row>
             </div>
-          </div>
         </div>
         <div className="event-category-section">
           <div  className="lottie-container">

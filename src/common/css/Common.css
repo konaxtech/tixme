@@ -665,14 +665,14 @@ input.theme-input::placeholder {
     background-image: url('../icon/eventhomebg.png');
 } */
 
-.event-list-bg {
+/* .event-list-bg {
     background-position: left;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding-top: 110px;
     padding-bottom: 60px;
     position: relative;
-}
+} */
 
 .event-title-home img {
     height: auto;
