@@ -36,7 +36,8 @@ import Zoom from 'react-reveal/Zoom';
 import { Link, useNavigate } from "react-router-dom";
 import { apiurl, onlyDayMonth, shortPer, app_url } from "../../common/Helpers";
 import { useTransition, animated } from 'react-spring';
-
+import Lottie from 'react-lottie';
+import animationData from '../../../src/animation-data.json'; 
 const Home = ({ title }) => {
   const [Eventlist, setEventlist] = useState([]);
   const [Listitems, setListitems] = useState([]);
@@ -81,8 +82,8 @@ const Home = ({ title }) => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
       }
     ]
@@ -170,6 +171,16 @@ const Home = ({ title }) => {
     leave: { transform: 'translateY(-100%)', opacity: 0 },
     config: { tension: 220, friction: 120 }
   });
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+      className:'event-list-bg-main'
+    },
+  };
 
   return (
     <>
@@ -342,6 +353,9 @@ const Home = ({ title }) => {
           </div>
         </div>
         <div className="event-category-section">
+          <div  className="lottie-container">
+          <Lottie options={defaultOptions} className="event-list-bg-main" height="100%" width="100%" />
+          </div>
           <div className="event-list-bg">
             <span className="event-title-home">
               <img src={EllipseIcon} alt="" /> Events
@@ -409,7 +423,7 @@ const Home = ({ title }) => {
                           </p>
                         </div>
                       </div>
-                      <div className="ticket-price-area mt-3">
+                      <div className="ticket-price-area mt-3 p-2">
                         <Row>
                           <Col md={7} xs={7} className="border-top-doted">
                             <div className="d-flex align-items-center text-center location-name">

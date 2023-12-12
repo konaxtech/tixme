@@ -661,9 +661,9 @@ input.theme-input::placeholder {
 }
 
 
-.event-list-bg {
+/* .event-list-bg {
     background-image: url('../icon/eventhomebg.png');
-}
+} */
 
 .event-list-bg {
     background-position: left;

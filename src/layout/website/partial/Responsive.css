@@ -35,12 +35,6 @@
     .in-event-page-cart-sec .price-section {
         max-width: 60px;
     }
-
-    p.category-title {
-        font-size: 9px;
-        right: 18px;
-    }
-
     .event-title-home {
         top: -17px;
         left: 27px;
@@ -126,7 +120,7 @@
     }
 
     .event-title-home {
-        font-size: 26px;
+        font-size: 19px;
         position: relative;
     }
 
@@ -268,10 +262,7 @@
     }
 
     .event-list-bg {
-        background-image: none;
         padding-top: 0px;
-        padding-bottom: 0px;
-        height: auto;
     }
 
     img.LogoIcon-footer {
@@ -924,7 +915,8 @@
 
     .header-logo {
         left: 24%;
-        width: 170px;
+        width: 138px;
+        top: -20px;
     }
 
     p.category-title {
@@ -932,7 +924,6 @@
         color: #0047ab;
         font-size: 14px;
         position: relative;
-        right: 31px;
     }
 
     .event-box-mobile {
@@ -1038,7 +1029,7 @@
     }
 
     .eventpage-box-style {
-        padding: 14px 3px;
+        padding: 14px 10px;
     }
 
     p.time-box-date {
@@ -1058,13 +1049,13 @@
     }
 
     .event-page-ticket .right-box-con {
-        padding: 0px 21px;
+        padding: 0px 10px;
     }
 
     .event-page-ticket .cart-increment-button {
         position: relative;
         top: -20px;
-        left: -7px;
+        left: -38px;
         width: max-content;
     }
 
@@ -1136,8 +1127,26 @@
         font-size: 15px;
     }
 }
+@media only screen and (max-width: 1024px) {
+    .header-logo {
+        left: 23%;
+        width: 105px;
+        top: -23px;
+    }
+    .home_banner {
+        padding: 0px 48px;
+    }
+    .button-join .bg-style {
+        background: #0047AB;
+        color: #fff;
+        padding: 9px 12px !important;
+        border-radius: 1rem;
+        margin: 0px !important;
+        font-size: 14px;
+    }
+}
 
-@media only screen and (min-width: 900px) {
+@media only screen and (max-width: 991px) {
     .signup-form-section {
         margin-top: 48px;
     }
@@ -1145,8 +1154,33 @@
     .partner-slider-margin {
         margin-top: -60px;
     }
-
-    .border-top-doted {
-        /*margin-left: 16px;*/
+    .event-title-home img {
+        width: 11px;
     }
+    .header-logo {
+        left: 22%;
+        width: 138px;
+        top: -20px;
+    }
+    .home_banner {
+        padding: 0px 64px;
+    }
+    .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .event-title-home {
+        top: -17px;
+        left: 39px;
+    }
+    .cursor-pointer {
+        padding: 0px;
+    }
+}
+@media only screen and (max-width: 480px) {
+.ticket-category-bg {
+    left: 79px;
+    height: auto;
+    width: 72px;
+}
 }

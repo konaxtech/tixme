@@ -24,7 +24,7 @@ ul.website_top_menu li {
 
 .footer-title {
     font-family: 'Gilroy-Bold', Arial, sans-serif;
-    font-size: 70px;
+    font-size: 56px;
     font-weight: 500;
     line-height: 40px;
     letter-spacing: 0em;
@@ -59,9 +59,9 @@ footer.footer-container {
 
 .Welcome_to_text {
     font-family: 'Gilroy-Regular', Arial, sans-serif;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 41px;
+    line-height: 32px;
     letter-spacing: 0em;
     text-align: left;
     color: #0000008f;
@@ -80,11 +80,16 @@ span.footer-box-style-title {
 .footer-right-box ul li {
     list-style: disc;
     margin-left: 40px;
-    font-size: 25px;
+    line-height: 22px;
+    font-size: 16px;
     font-family: 'Gilroy-Regular', Arial, sans-serif;
     font-weight: 600;
     color: #000;
     margin-bottom: 16px;
+}
+
+.subsscribe-box-style {
+    width: 43%;
 }
 
 .footer-short-text {
@@ -101,7 +106,7 @@ span.footer-box-style-title {
 p.banner_shop_desc {
     font-family: 'Gilroy-SemiBold', Arial, sans-serif;
     color: #000;
-    font-size: 26px;
+    font-size: 22px;
 }
 
 p.about_banner_shop_desc {
@@ -239,7 +244,7 @@ p.banner_text {
 }
 
 .in-event-page-cart-sec .price-section {
-    min-width: 120px;
+    min-width: 87px;
 }
 
 .event-time {
@@ -358,6 +363,7 @@ span.on-img-date-val {
     font-size: 57px;
     color: #000;
     font-weight: 600;
+    font-family: 'Gilroy-Bold', Arial, sans-serif;
 }
 
 .event-category-title {
@@ -376,6 +382,7 @@ span.on-img-date-val {
 .desc-sec p {
     color: #000;
     font-size: 16px;
+    font-family: 'Gilroy-Bold', Arial, sans-serif;
 }
 
 .desc-sec .sec-title {
@@ -384,6 +391,7 @@ span.on-img-date-val {
     font-size: 27px;
     margin-bottom: 16px;
     display: block;
+    font-family: 'Gilroy-Bold', Arial, sans-serif;
 }
 
 .eventpage-box-style {
@@ -585,8 +593,8 @@ p.Ticket-title {
 span.Want-to-receive {
     color: #0047AB;
     font-weight: 600;
-    font-size: 40px;
-    line-height: 45px;
+    font-size: 28px;
+    line-height: 34px;
     display: block;
     padding-left: 30px;
 }
@@ -672,11 +680,13 @@ input.theme-input::placeholder {
 .theme-input-custome::placeholder {
     color: #6495ED;
 }
-
-
-.event-list-bg {
+.lottie-container {
+    width: 100%;
+    height: auto; /* This ensures the height adjusts proportionally based on the width */
+  }
+/* .event-list-bg {
     background-image: url('../../../common/icon/eventhomebg.png');
-}
+} */
 
 .event-list-bg {
     background-position: left;
@@ -684,7 +694,8 @@ input.theme-input::placeholder {
     background-repeat: no-repeat;
     padding-top: 110px;
     padding-bottom: 60px;
-    position: relative;
+    position: absolute;
+    top: 26%;
 }
 
 .event-title-home img {
@@ -700,6 +711,7 @@ input.theme-input::placeholder {
     position: absolute;
     top: 4px;
     left: 94px;
+    font-family: 'Gilroy-Bold', Arial, sans-serif;
 }
 
 .left-footer-logo-box {
@@ -1209,7 +1221,6 @@ p.category-title {
     color: #0047ab;
     font-size: 14px;
     position: relative;
-    right: 31px;
 }
 
 .phone-number-with-code .form-control {
