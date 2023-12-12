@@ -464,6 +464,11 @@ const Page = ({ title }) => {
       }
     }
   };
+  const openGoogleMaps = () => {
+    const location = Eventdata.location; // Replace with the location name or coordinates
+    const mapsUrl = `https://www.google.com/maps?q=${encodeURIComponent(location)}`;
+    window.open(mapsUrl, "_blank");
+  };
   return (
     <>
       <Mobilemenu />
@@ -522,7 +527,7 @@ const Page = ({ title }) => {
                         <span className="event-duration d-block">
                           {Eventdata.location}
                         </span>
-                        <span className="event-time d-block">Get direction</span>
+                        <span onClick={openGoogleMaps} className="event-time d-block cursor-pointer py-0">Get direction</span>
                       </div>
                       <div className="d-inline-block mr-1 ml-3">
                         <img height={30} width={30} src={MapIcon} alt="" />
@@ -563,17 +568,17 @@ const Page = ({ title }) => {
                         </p>
                       </Fade>
                     </div>
-                    <div className="desc-sec">
+                    {/* <div className="desc-sec">
                       <span className="sec-title">Map</span>
-                    </div>
+                    </div> */}
                     <div className="desc-sec">
-                      <span className="sec-title">
+                      <span onClick={() => navigate(app_url + 'privacy-policy')} className="sec-title cursor-pointer">
                         Return Policy{" "}
                         <span>
                           <img src={ShareIcon} alt="" />
                         </span>
                       </span>
-                      <p className="report">
+                      <p onClick={() => navigate(app_url + 'contact')} className="report cursor-pointer">
                         <img src={FlagIcon} alt="" /> Report this event
                       </p>
                     </div>
@@ -900,6 +905,9 @@ const Page = ({ title }) => {
             <div className="event-category-section mb-5 in-event-page">
               <Container fluid className="">
                 <Row className="event-box-mobile">
+                  <Col md={12}>
+                    <h2 className="desc-sec theme-color">Other events you may like</h2>
+                  </Col>
                   {Eventlist.map((item, index) => (
                     <Col md={4} className="mb-3 cursor-pointer" title="View" onClick={() => viewEvent(item._id, item.name)}>
                       <Fade bottom>

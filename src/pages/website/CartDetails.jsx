@@ -23,15 +23,18 @@ const Page = ({ title }) => {
     const [DiscountPer, setDiscountPer] = useState(0);
     const [DiscountAmount, setDiscountAmount] = useState(0);
     const [Subtotal, setSubtotal] = useState(0);
-    const [userPlan, setuserPlan] = useState([]);
+    const [userwalletbal, setuserwalletbal] = useState();
+    const [Iswallet, setIswallet] = useState(false);
+    const [WantRedeem, setWantRedeem] = useState(false);
     const [eventTotalPrice, setEventTotalPrice] = useState(0);
     const [localQuantities, setLocalQuantities] = useState({});
     const [totalPrice, setTotalPrice] = useState(0);
+    const [rewardPoints, setRewardPoints] = useState('');
     useEffect(() => {
         if (moneyLoader) {
             calculateTotalPrice();
         }
-    }, [cartItems, moneyLoader]);
+    }, [cartItems, moneyLoader, rewardPoints]);
     useEffect(() => {
         if (isFirstRender) {
             localStorage.setItem('cart', JSON.stringify({ items: cartItems, quantities: localQuantities }));
@@ -43,6 +46,24 @@ const Page = ({ title }) => {
         window.scrollTo(0, 0);
     }, []);
 
+    const handleInputChange = (event) => {
+        const inputValue = event.target.value;
+
+        // Check if the input is a number
+        if (/^\d*$/.test(inputValue)) {
+            // Convert inputValue to a number and check if it's less than or equal to the dynamic maximum value
+            const numericValue = inputValue === '' ? 0 : parseInt(inputValue, 10);
+            const maxLimit = userwalletbal; // You can replace this with your dynamic maximum value
+            if (numericValue <= maxLimit) {
+                setRewardPoints(inputValue);
+            }
+        }
+    };
+
+
+    const handelRedeem = async () => {
+        setWantRedeem(true);
+    }
     const getUserdata = async () => {
 
         if (Beartoken) {
@@ -57,8 +78,11 @@ const Page = ({ title }) => {
                     .then(response => response.json())
                     .then(data => {
                         if (data.success == true) {
-                            setuserPlan(data.data)
-                            setDiscountPer(data.data.discount_amount)
+                            setuserwalletbal(data.data)
+                            if (data.data > 0) {
+                                setIswallet(true);
+                            }
+                            // setDiscountPer(data.data.discount_amount)
                             setamountLoader(false)
                             setmoneyLoader(true)
                         } else {
@@ -123,9 +147,10 @@ const Page = ({ title }) => {
         const total = cartItems.reduce((accumulator, currentItem) => {
             return accumulator + currentItem.price * currentItem.quantity;
         }, 0);
-        if (DiscountPer) {
+        if (rewardPoints) {
             // Calculate discount amount
-            const discountAmount = (total * DiscountPer) / 100;
+            // const discountAmount = (total * DiscountPer) / 100;
+            const discountAmount = rewardPoints;
 
             // Calculate subtotal after discount
             const subtotal = total - discountAmount;
@@ -160,7 +185,8 @@ const Page = ({ title }) => {
                 totalamount: Subtotal,
                 cartitem: cartItems,
                 gatway_name: "Stripe",
-                location: "India"
+                location: "India",
+                rewardpoints: rewardPoints ? rewardPoints : null
             }
             fetch(apiurl + 'order/stripe/checkout', {
                 method: 'POST',
@@ -263,13 +289,46 @@ const Page = ({ title }) => {
                                                             <Col md={6} className="my-2 text-end">
                                                                 <h5 className="cart-amount-small-amount">Rs. {allItemsTotalPrice}</h5>
                                                             </Col>
+                                                            {Iswallet ? (
+                                                                <>
+                                                                    <Col md={12}>
+                                                                        <div class="widget-stat card bg-success">
+                                                                            <div class="card-body p-2">
+                                                                                <div class="media">
+                                                                                    <span class="me-3">
+                                                                                        <i class="flaticon-381-diamond"></i>
+                                                                                    </span>
+                                                                                    <div class="media-body text-white text-end">
+                                                                                        <p class="mb-1">Reward Points</p>
+                                                                                        <h3 class="text-white">{userwalletbal}</h3>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <button type="button" onClick={handelRedeem} class="w-100 btn btn-light btn-xs mt-2">Redeem Points</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </Col>
+                                                                    <Col md={12} className="mb-2">
+
+                                                                    </Col>
+                                                                </>
+                                                            ) : ''}
+                                                            {WantRedeem ? (
+                                                                <Col md={12} className="mb-3">
+                                                                    <h3 className="cart-amount-small-title theme-color font-600">Reward Points</h3>
+                                                                    <input type="text" class="form-control" placeholder="Enter Reward Points"
+                                                                        value={rewardPoints}
+                                                                        onChange={handleInputChange}
+                                                                    />
+                                                                </Col>
+
+                                                            ) : ''}
                                                             {DiscountAmount ? (
                                                                 <>
                                                                     <Col md={6} className="my-2">
                                                                         <h5 className="cart-amount-small-title">Discount</h5>
                                                                     </Col>
                                                                     <Col md={6} className="my-2 text-end">
-                                                                        <h5 className="cart-amount-small-amount">{DiscountAmount} ({DiscountPer}%)</h5>
+                                                                        <h5 className="cart-amount-small-amount">{DiscountAmount}</h5>
                                                                     </Col>
                                                                 </>
                                                             ) : ''}
@@ -282,6 +341,7 @@ const Page = ({ title }) => {
                                                             <Col md={6} className="text-end">
                                                                 <h3 className="cart-amount-small-amount theme-color font-600">Rs. {Subtotal}</h3>
                                                             </Col>
+
                                                             <Col md={12}>
                                                                 {ApiLoader ? (
                                                                     <Button className='signup-page-btn'>Please wait...</Button>

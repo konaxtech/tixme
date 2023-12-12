@@ -32,9 +32,13 @@ import EventType from './pages/organizer/Event/EventCreateForm';
 import EditEvent from './pages/organizer/Event/EditEvent';
 import EventView from './pages/organizer/Event/EventView';
 import EventList from './pages/organizer/Event/List';
+import Ticketlist from './pages/organizer/Event/ticketlist';
+import TicketSoldlist from './pages/organizer/ticketsold/List';
+import PayoutList from './pages/organizer/payout/list';
 import Tixmescanner from './pages/organizer/Tixmescanner';
 import Tixmescannerpage from './pages/organizer/Tixmescannerpage';
 import Qrvalidation from './pages/organizer/Qrvalidation';
+import OrganizerProfile from './pages/organizer/OrganizerProfile';
 import OrganizerLayout from './layout/organizer/Layout'
 // auth
 import CustomerLogin from './pages/website/auth/CustomerLogin';
@@ -111,10 +115,14 @@ function App() {
           <Route path={`${organizer_url}event/view-event/:id/:name`} element={<OrganizerLayout> <EventView title={'Event details'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'event/all-event-list'} element={<OrganizerLayout> <EventList title={'All event list'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'support-tickets'} element={<OrganizerLayout> <OrganizerSupportlist title={'Support Tickets'} /> </OrganizerLayout>} />
+          <Route path={organizer_url + 'ticket-sold-list'} element={<OrganizerLayout> <TicketSoldlist title={'Tickets sold list'} /> </OrganizerLayout>} />
+          <Route path={organizer_url + 'tickets-list'} element={<OrganizerLayout> <Ticketlist title={'Tickets list'} /> </OrganizerLayout>} />
+          <Route path={organizer_url + 'payout-request'} element={<OrganizerLayout> <PayoutList title={'Payout list'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'tixme-scanner'} element={<OrganizerLayout> <Tixmescanner title={'Tixme scanner'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'tixme-scanner-page'} element={<OrganizerLayout> <Tixmescannerpage title={'Tixme scanner'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'tixme-validate'} element={<OrganizerLayout> <Qrvalidation title={'QR validate'} /> </OrganizerLayout>} />
           <Route path={organizer_url + 'analytics'} element={<OrganizerLayout> <Analytics title={'Analytics'} /> </OrganizerLayout>} />
+          <Route path={organizer_url + 'my-profile'} element={<OrganizerLayout> <OrganizerProfile title={'My profile'} /> </OrganizerLayout>} />
           {/* Admin */}
           <Route path={admin_url + 'dashboard'} element={<AdminLayout> <AdminDashboard title={'Admin Dashboard'} /> </AdminLayout>} />
           <Route path={admin_url + 'add-category'} element={<AdminLayout> <AddCategory title={'Add Category'} /> </AdminLayout>} />

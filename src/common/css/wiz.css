@@ -7,7 +7,7 @@
 }
 
 #progressbar .active {
-    color: #673AB7
+    color: #0047AB
 }
 .noedit{
     cursor: default;
@@ -72,7 +72,7 @@
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #673AB7
+    background: #0047AB
 }
 
 .progress {
@@ -80,7 +80,7 @@
 }
 
 .progress-bar {
-    background-color: #673AB7
+    background-color: #0047AB
 }
 
 .fit-image {

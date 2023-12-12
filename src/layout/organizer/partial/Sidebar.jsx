@@ -43,6 +43,18 @@ const Sidebar = () => {
                                 <span className="nav-text">Event Management</span>
                             </Link>
                         </li>
+                        <li onClick={() => d()}>
+                            <Link to={organizer_url + 'tickets-list'} className="ai-icon" aria-expanded="false">
+                                <img src={ticketIcon} alt="Your Logo" />
+                                <span className="nav-text">Tickets list</span>
+                            </Link>
+                        </li>
+                        <li onClick={() => d()}>
+                            <Link to={organizer_url + 'ticket-sold-list'} className="ai-icon" aria-expanded="false">
+                                <img src={ticketIcon} alt="Your Logo" />
+                                <span className="nav-text">Attendees list</span>
+                            </Link>
+                        </li>
                         {/* <li><Link href="reports.html" className="ai-icon" aria-expanded="false">
                             <img src={ticketIcon} alt="Your Logo" />
                             <span className="nav-text">Event Bookings</span>
@@ -71,6 +83,16 @@ const Sidebar = () => {
                         <li><Link to={organizer_url+ 'support-tickets'} className="ai-icon" aria-expanded="false">
                             <img src={supportIcon} alt="Your Logo" />
                             <span className="nav-text">Support</span>
+                        </Link>
+                        </li>
+                        <li><Link to={organizer_url+ 'payout-request'} className="ai-icon" aria-expanded="false">
+                            <img src={supportIcon} alt="Your Logo" />
+                            <span className="nav-text">Payout Request</span>
+                        </Link>
+                        </li>
+                        <li onClick={() => d()}><Link to={organizer_url+ 'my-profile'} className="ai-icon" aria-expanded="false">
+                            <img src={supportIcon} alt="Your Logo" />
+                            <span className="nav-text">Profile Managment</span>
                         </Link>
                         </li>
                         <li onClick={() => d()}>

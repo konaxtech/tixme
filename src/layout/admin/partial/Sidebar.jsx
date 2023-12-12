@@ -124,6 +124,12 @@ const Sidebar = () => {
                                 <span className="nav-text">Membership</span>
                             </Link>
                         </li >
+                        {/* <li onClick={() => d()}>
+                            <Link to={admin_url + 'payout-request'} className="ai-icon" aria-expanded="false">
+                                <img src={DashboardIcon} alt="Your Logo" />
+                                <span className="nav-text">Payout request</span>
+                            </Link>
+                        </li > */}
                         <li onClick={() => d()}>
                             <Link to={admin_url + 'contact-us'} className="ai-icon" aria-expanded="false">
                                 <img src={DashboardIcon} alt="Your Logo" />

@@ -59,6 +59,7 @@ const Type = ({ title, editid }) => {
     const [Enddateselect, setEnddateselect] = useState(new Date());
     const [IsclockCountdown, setIsclockCountdown] = useState(false);
     const [Displaystarttime, setDisplaystarttime] = useState(false);
+    const [EditApiloader, setEditApiloader] = useState(false);
     const [Displayendtime, setDisplayendtime] = useState(false);
     const [Eventdesc, setEventdesc] = useState();
     const [categoryList, setcategoryList] = useState([{ value: "", label: "Category" }]);
@@ -644,7 +645,7 @@ const Type = ({ title, editid }) => {
     }
     const getEditdata = async (editid) => {
         try {
-            setApiloader(true);
+            setEditApiloader(true);
             const requestData = {
                 id: editid
             };
@@ -684,16 +685,18 @@ const Type = ({ title, editid }) => {
                         setDisplayprice(data.data.displayprice)
                         setDisplaycutprice(data.data.displaycutprice)
                         setSelectedTimezone(data.data.timezone)
+                        setTicketList(data.data.allprice)
                         setTags(data.data.tags)
                         if (data.data.event_desc) {
                             setEventdesc(data.data.event_desc)
                         }
-                        fetchAllTicket()
+                        // fetchAllTicket()
                     }
+                    setEditApiloader(false);
                 })
                 .catch(error => {
                     console.error('Insert error:', error);
-                    setApiloader(false);
+                    setEditApiloader(false);
                 });
 
         } catch (error) {
@@ -718,6 +721,9 @@ const Type = ({ title, editid }) => {
     ];
     return (
         <>
+            {EditApiloader ? (
+                <div className="linear-background w-100"> </div>
+            ) : (
             <Row className="pb-2">
                 <Col md={12}>
                     <Card>
@@ -1066,13 +1072,13 @@ const Type = ({ title, editid }) => {
                                         <textarea className="custome-text-area" placeholder="Description" value={Eventdesc} onChange={(e) => setEventdesc(e.target.value)}></textarea>
 
                                     </div>
-                                    <div className="col-md-12 mt-2">
+                                    {/* <div className="col-md-12 mt-2">
                                         <h3 className="text-grey">Add more sections to your event page</h3>
                                         <p className="text-light-grey">Help people in the area discover your event and let attendees know where to <br /> show up.</p>
-                                    </div>
-                                    <div className="col-md-12 mt-2 d-flex align-items-center">
+                                    </div> */}
+                                    {/* <div className="col-md-12 mt-2 d-flex align-items-center">
                                         <span className="theme-color text-bold-600 font-30 mr-3">FAQ</span> <button className="btn-2" type="button">Add <img src={Locationstart} /></button>
-                                    </div>
+                                    </div> */}
                                     <div className="col-md-12 mt-2">
                                         <div className="col-md-12 mt-2">
                                             <div className="button-group mt-10">
@@ -1194,6 +1200,7 @@ const Type = ({ title, editid }) => {
                     </Card>
                 </Col>
             </Row >
+            )}
             <Modal isOpen={Ticketshow} toggle={() => setTicketshow(!Ticketshow)} className='modal-dialog-centered modal-lg'>
                 <ModalHeader className='bg-transparent' toggle={() => setTicketshow(!Ticketshow)}>Create new ticket</ModalHeader>
                 <ModalBody className=''>

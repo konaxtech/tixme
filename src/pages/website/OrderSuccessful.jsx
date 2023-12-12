@@ -34,6 +34,33 @@ const Page = ({ title }) => {
         height: '200px'
 
     }
+    const checkMembership = async (id) => {
+        try {
+            const requestData = {
+                customerId: id,
+            }
+            fetch(apiurl + 'order/membership-check', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success == true) {
+                        
+                    } else {
+                        
+                    }
+                })
+                .catch(error => {
+                    console.error('error:', error);
+                });
+        } catch (error) {
+            console.error('Login api error:', error);
+        } 
+    }
     const checkPayment = async () => {
         try {
             if (!payment_id) {
@@ -60,6 +87,7 @@ const Page = ({ title }) => {
                         setamount(data.data.amount);
                         setdate(data.data.date);
                         settime(data.data.time);
+                        checkMembership(data.data.userid);
                         setApiLoader(false);
                     } else {
                         toast.error(data.data)
