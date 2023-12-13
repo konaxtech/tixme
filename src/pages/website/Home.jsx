@@ -37,7 +37,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { apiurl, onlyDayMonth, shortPer, app_url } from "../../common/Helpers";
 import { useTransition, animated } from 'react-spring';
 import Lottie from 'react-lottie';
-import animationData from '../../../src/animation-data.json'; ; 
+import animationData from '../../../src/animation-data.json';
 const Home = ({ title }) => {
   const [Eventlist, setEventlist] = useState([]);
   const [Listitems, setListitems] = useState([]);
@@ -231,15 +231,15 @@ const Home = ({ title }) => {
         </div>
         <div className="mb-5">
           <div>
-          {/* <Lottie options={defaultOptions} className="event-list-bg-main" /> */}
           </div>
             <div className="find-nearby-section">
+
               <Row>
                 <Col md={12}>
                   <h3 className="find-near-box">Find Near By Events</h3>
                 </Col>
                 <Col md={12} className="Find-Near-form">
-                  <div className="d-flex">
+                  <div className="d-flex Find-Near-form-inner">
                     <select name="" id="" className="theme-dropdown dropdown-custome category-select">
                       {Listitems.map((item, index) => (
                           <option value={item._id}>{item.name}</option>
@@ -358,9 +358,9 @@ const Home = ({ title }) => {
           <Lottie options={defaultOptions} className="event-list-bg-main" height="100%" width="100%" />
           </div>
           <div className="event-list-bg">
-            <span className="event-title-home">
+            <div className="event-title-home">
               <img src={EllipseIcon} alt="" /> Events
-            </span>
+            </div>
             <Row className="event-box-mobile event-box-mobile-home">
               {Eventlist.map((item, index) => (
                 <Col md={4} className="mb-5 cursor-pointer" title="View" onClick={() => viewEvent(item._id, item.name)}>
@@ -374,7 +374,7 @@ const Home = ({ title }) => {
                           <span className="on-img-date-val">{onlyDayMonth(item.start_date)}</span>
                         </span>
                       </div>
-                      <div className="organizer-name-sec d-flex align-items-center px-2 py-2">
+                      <div className="organizer-name-sec d-flex align-items-center px-2 py-1">
                         <div className="d-inline-block mr-3">
                           <img
                             height={50}

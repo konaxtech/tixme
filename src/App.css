@@ -30,7 +30,7 @@
   color: #fff;
   padding: 9px 15px !important;
   border-radius: 1rem;
-  margin: 0px !important;
+  margin: 2px !important;
 }
 
 .bg-dark {
@@ -195,7 +195,7 @@ span.input-group-text {
 } */
 .cursor-pointer {
   cursor: pointer;
-  padding: 13px 0px;
+  padding: 0 15px;
 }
 
 .content-body {

@@ -60,12 +60,12 @@ const Footer = () => {
                                 </span>
                                 <span className="Want-to-receive"><span> Want to receive events &</span> <span> news and updates?</span></span>
                             </div>
-                            <div className="ml-5">
+                            <div className="ml-5 subsscribe-form-input">
                                 <div className="mt-4 mb-4 subsscribe-form-input-area">
                                     <input className="footer-input" type="text" placeholder="Name" />
                                     <input className="footer-input" type="text" placeholder="Email ID" />
                                 </div>
-                                <div className="mb-4">
+                                <div className="mb-4 subsscribe-form-inner">
                                     <span><img className="mr-4" src={CheckboxIcon} alt="" />I agree with the <span className="theme-color">privacy statement</span></span>
                                 </div>
                                 <div className="subscribe-btn">

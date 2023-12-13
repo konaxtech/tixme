@@ -16,7 +16,7 @@ const Sidebar = () => {
                         </Link>
                     </li> */}
                     <li className="nav-item">
-                        <Link className="button-join" to={app_url + 'aboutus'}>
+                        <Link className="button-join" to={app_url + 'about'}>
                             <span>
                                 About Us <img src={Locationstart} />
                             </span>

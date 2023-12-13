@@ -24,7 +24,7 @@ ul.website_top_menu li {
 
 .footer-title {
     font-family: 'Gilroy-Bold', Arial, sans-serif;
-    font-size: 56px;
+    font-size: 42px;
     font-weight: 500;
     line-height: 40px;
     letter-spacing: 0em;
@@ -72,7 +72,7 @@ span.footer-box-style-title {
     color: rgba(0, 71, 171, 1);
     font-family: 'Gilroy-Bold', Arial, sans-serif;
     font-weight: 800;
-    font-size: 25px;
+    font-size: 20px;
     margin-bottom: 7px;
     display: block;
 }
@@ -86,10 +86,6 @@ span.footer-box-style-title {
     font-weight: 600;
     color: #000;
     margin-bottom: 16px;
-}
-
-.subsscribe-box-style {
-    width: 43%;
 }
 
 .footer-short-text {
@@ -106,7 +102,7 @@ span.footer-box-style-title {
 p.banner_shop_desc {
     font-family: 'Gilroy-SemiBold', Arial, sans-serif;
     color: #000;
-    font-size: 22px;
+    font-size: 21px;
 }
 
 p.about_banner_shop_desc {
@@ -128,13 +124,12 @@ p.about_banner_shop_desc {
 }
 
 p.banner_text {
-    font-size: 75px;
-    line-height: 142px;
+    font-size: 50px;
+    line-height: 69px;
+    padding-bottom: 13px;
     font-weight: 800;
     font-family: 'Gilroy-Bold', Arial, sans-serif;
     color: #000;
-    letter-spacing: 2px;
-    padding-bottom: 100px;
 }
 
 .text-blue {
@@ -231,7 +226,6 @@ p.banner_text {
     box-shadow: 1px 3px 5px 0px rgba(217, 217, 217, 0.75);
     -webkit-box-shadow: 1px 3px 5px 0px rgba(217, 217, 217, 0.75);
     -moz-box-shadow: 1px 3px 5px 0px rgba(217, 217, 217, 0.75);
-    margin: 0px 40px;
 }
 
 .event-duration {
@@ -331,7 +325,7 @@ img.ticket-bg {
     position: absolute;
     left: 10px;
     top: 13px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -354,7 +348,7 @@ span.on-img-date img {
 span.on-img-date-val {
     font-weight: 600;
     color: #0047ab;
-    font-size: 22px;
+    font-size: 14px;
     position: relative;
     top: 4px;
 }
@@ -573,21 +567,21 @@ p.Ticket-title {
 }
 
 .SubscribeBg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 1;
+    position: relative;
     height: 100%;
     width: 100%;
 }
 
 .subsacribe-content {
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    padding: 0;
+    top: 110px;
+    left: 70px;
 }
-
-.subsacribe-content {
-    padding: 80px 0px 0px 80px;
+.footer-input {
+    height: 50px;
+    width: 300px;
+    margin-right: 18px;
 }
 
 span.Want-to-receive {
@@ -700,7 +694,7 @@ input.theme-input::placeholder {
 
 .event-title-home img {
     height: auto;
-    width: 21px;
+    width: 12px;
     margin-right: 5px;
 }
 
@@ -879,6 +873,15 @@ h3.sec-main-title {
     font-weight: 600;
 }
 
+.about_section-img-inner img {
+    width: 100%;
+}
+.about_section-content-inner p {
+    font-size: 14px;
+    line-height: 30px;
+    color: #000;
+    font-weight: 500;
+}
 img.about2 {
     height: auto;
     width: 400px;
@@ -906,21 +909,9 @@ img.about2 {
     line-height: 60px;
 }
 
-.As_a_leading_sec {
-    padding: 0px 100px;
-    text-align: left;
-}
-
-p.about_banner_text {
-    font-weight: 400;
-    color: #000;
-    font-size: 72px;
-    line-height: 97px;
-    padding-right: 30px;
-}
-
 .about_top_section {
     position: relative;
+    padding-top: 70px;
 }
 
 p.about_banner_short_text {
@@ -932,25 +923,29 @@ p.about_banner_short_text {
     right: 41px;
 }
 
-img.about11 {
-    height: auto;
-    width: 803px;
-    border-radius: 26px;
-    position: absolute;
-    top: 160px;
-    left: 0;
-}
-
 img.about2 {
     height: auto;
     width: 600px;
     border-radius: 26px;
 }
 
-.As_a_leading_sec {
-    padding: 0px 100px;
-    text-align: left;
-    margin-top: 200px;
+.As_a_leading_sec p {
+    font-size: 14px;
+    line-height: 40px;
+    color: #000;
+    font-weight: 500;
+}
+.As_a_leading_sec-inner{
+    font-size: 14px;
+    line-height: 40px;
+    color: #000;
+    font-weight: 400; 
+}
+.As_a_leading_sec span {
+    font-size: 14px;
+    line-height: 40px;
+    color: #000;
+    font-weight: 600;
 }
 
 img.web-icon-about {
@@ -1141,9 +1136,10 @@ p.contact-desc {
 
 .header-logo {
     position: relative;
-    left: 90px;
+    left: 110px;
     height: auto;
-    width: 250px;
+    width: 150px;
+    top: -30px;
 }
 
 .container-fluid {
@@ -1170,7 +1166,7 @@ p.contact-desc {
 } */
 
 .organizer-by {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .location-name {
@@ -1254,7 +1250,8 @@ p.category-title {
 }
 
 .event-box-mobile-home {
-    margin: 0px 80px;
+    margin: 0px 60px;
+    width: 100%;
 }
 
 span.cart-price {

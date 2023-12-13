@@ -378,7 +378,7 @@ const Page = ({ title }) => {
             <div className="event-desc">
               <Container fluid>
                 <Row>
-                  <Col md={9}>
+                  <Col lg={9} md={12} >
                     <div className="desc-sec">
                       <span className="sec-title">
                         <Fade bottom>Description</Fade>
@@ -451,7 +451,7 @@ const Page = ({ title }) => {
                                             <Row>
                                               <Col
                                                 md={5}
-                                                className="d-flex align-items-center"
+                                                className="d-flex align-items-center p-0"
                                               >
                                                 <div className="event-image-part">
                                                   <img
@@ -461,9 +461,9 @@ const Page = ({ title }) => {
                                                   />
                                                 </div>
                                               </Col>
-                                              <Col md={7} className="event-view-page">
+                                              <Col md={7} className="event-view-page  p-0">
                                                 <div className="organizer-name-sec px-2 py-2">
-                                                  <div className="d-inline-flex align-items-center  event-time-area">
+                                                  <div className="align-items-center  event-time-area">
                                                     <div className="d-inline-block mr-1">
                                                       <img
                                                         height={30}
@@ -504,7 +504,7 @@ const Page = ({ title }) => {
                                               <Col md={12}>
                                                 <div className="event-name  ml-2">
                                                   <span>{item.display_name}</span>
-                                                  <p className="font-10">
+                                                  <p>
                                                     {shortPer(item.event_desc, 100)}
                                                   </p>
                                                 </div>
@@ -545,7 +545,7 @@ const Page = ({ title }) => {
                       </Col>
                     </Row>
                   </Col>
-                  <Col md={3}>
+                  <Col lg={3} md={12} >
                     <div className="start-in-box eventpage-box-style mb-5">
                       <div className="right-box-title">
                         <p><Flip left cascade>Starts In</Flip></p>
@@ -587,7 +587,7 @@ const Page = ({ title }) => {
                       </div>
                       <div className="border-botton-devider my-2"></div>
                       <div className="right-box-con mt-4">
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center in-event-page-cart">
                           <div className="d-inline-block mr-4">
                             <p className="followers-title">Followers</p>
                             <p className="followers-count">99</p>
@@ -598,7 +598,7 @@ const Page = ({ title }) => {
                             </button>
                           </div>
                         </div>
-                        <div className="d-inline-flex align-items-center py-2">
+                        <div className="d-inline-flex align-items-center py-2 ">
                           <div className="d-inline-block mr-1">
                             <img height={30} width={30} src={LocationIcon} alt="" />
                           </div>
@@ -629,7 +629,7 @@ const Page = ({ title }) => {
                           {Eventdata.allprice.map((items, index) => (
                             <>
                               <div key={items.id} className="right-box-con mt-4 in-event-page-cart-sec">
-                                <div className="d-flex align-items-center">
+                                <div className="d-flex align-items-center in-event-page-cart">
                                   <div className="price-section d-inline-block">
                                     <p className="Ticket-title">{items.name}</p>
                                     {items.ticket_type == 1 ? (

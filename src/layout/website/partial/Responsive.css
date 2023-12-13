@@ -1,4 +1,384 @@
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1480px) {
+    .rectangle_bg {
+        top: 35px;
+    }
+    .header-logo {
+        width: 130px;
+    }
+
+    .website_top_menu .nav-item {
+        font-size: 16px;
+    }
+    .price-section p {
+        color: #000;
+        font-weight: 600;
+        margin-bottom: -9px;
+        font-size: 20px;
+    }
+    p.category-title {
+        font-weight: 600;
+        color: #0047ab;
+        font-size: 14px;
+        position: relative;
+    }
+
+    span.on-img-date img {
+        width: 23px;
+    }
+
+    .on-img-date {
+        right: 14px;
+    }
+
+    .price {
+        font-size: 23px;
+    }
+
+    .event-title-home {
+        font-size: 32px;
+        top: 20px;
+        left: 76px;
+    }
+
+    .count-box {
+        background-size: 100%;
+        height: 181px;
+        width: 210px;
+        background-size: 100% 100%;
+    }
+
+    .partner-slider .mx-3 {
+        margin: 5px !important;
+    }
+
+    .count-box-title {
+        font-size: 45px;
+    }
+
+    .count-box-count {
+        font-size: 39px;
+    }
+
+    .partner-slider img {
+        width: 160px;
+        margin: 0px 10px;
+    }
+
+    .event-box-mobile-home {
+        margin: 0px 69px;
+        width: 100%;
+    }
+
+    img.LogoIcon-footer {
+        right: -62px;
+        top: -120px;
+        height: 457px;
+    }
+
+    span.Want-to-receive {
+        font-size: 30px;
+        line-height: 39px;
+    }
+
+    .footer-title {
+        font-size: 41px;
+        top: 10px;
+    }
+
+    img.footer-star-icon {
+        height: auto;
+        width: 42px;
+    }
+
+    .footer-box-style {
+        padding: 20px 0px 60px 30px;
+    }
+
+    .content-data-event {
+        padding: 0px 10px;
+    }
+
+    .eventpage-box-style {
+        padding: 14px 10px;
+    }
+
+    p.time-box-date {
+        font-size: 21px;
+        margin: 0px 8px;
+        height: 44px;
+        width: 44px;
+    }
+
+    .time-box-text {
+        font-size: 9px;
+        margin-top: 5px;
+    }
+
+    .event-page-organizer-deta.d-block {
+        font-size: 10px;
+    }
+
+    .event-page-ticket .right-box-con {
+        padding: 0px 10px;
+    }
+
+    .event-page-ticket .cart-increment-button {
+        position: relative;
+        top: -20px;
+        left: -38px;
+        width: max-content;
+    }
+
+    .event-page-ticket .event-time {
+        color: #000;
+        font-size: 10px;
+    }
+
+    .event-page-ticket .event-duration {
+        font-size: 9px !important;
+    }
+
+    .event-page-ticket .main-title {
+        font-size: 15px;
+        margin: 0px 9px;
+    }
+
+    .paynow-btn-box {
+        margin: 11px !important;
+    }
+
+    img.web-icon-about {
+        top: 68px;
+        left: 30px;
+    }
+
+    p.about_banner_text {
+        font-weight: 500;
+        font-size: 34px;
+    }
+
+    p.about_banner_short_text {
+        padding-left: 26px;
+        font-size: 19px;
+    }
+
+    img.about2 {
+        width: 300px;
+    }
+
+    .about2_box h3 {
+        font-size: 48px;
+    }
+
+    .about2_box p {
+        padding-right: 0;
+        font-size: 14px;
+    }
+
+    .our_values_title {
+        font-size: 23px;
+    }
+
+    p.our_values_desc {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 1307px) {
+    .event-list-bg {
+        top: 27%;
+    }
+
+    .event-title-home {
+        font-size: 24px;
+    }
+    .ticket-price-area-bg {
+        background-size: 100% 310px;
+    }
+    .event-duration {
+        font-size: 13px;
+    }
+    .event-time {
+        color: #000;
+        font-size: 14px;
+    }
+    .price-section p {
+        margin-bottom: -5px;
+        font-size: 15px;
+    }
+    .price {
+        font-size: 18px;
+    }
+    .cut-price {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .event-list-bg {
+        top: 28%;
+    }
+
+    .in-event-page-cart{
+        display: block !important;
+    }
+    .event-page-ticket .cart-increment-button {
+        top: -25px;
+        left: -20px;
+    }
+    .header-logo {
+        position: relative;
+        left: 98px;
+        height: auto;
+        width: 130px;
+        top: -30px;
+    }
+}
+
+@media only screen and (max-width: 1190px) {
+    .event-list-bg {
+        top: 27%;
+    }
+
+    .event-title-home {
+        top: 14px;
+        left: 66px;
+    }
+
+    .header-logo {
+        position: relative;
+        left: 85px;
+        height: auto;
+        width: 119px;
+        top: -30px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .event-list-bg {
+        top: 27%;
+    }
+
+    .event-title-home {
+        top: 14px;
+        left: 56px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .header-logo {
+        left: 23%;
+        width: 105px;
+        top: -23px;
+    }
+
+    .home_banner {
+        padding: 0px 48px;
+    }
+
+    .button-join .bg-style {
+        background: #0047AB;
+        color: #fff;
+        padding: 9px 12px !important;
+        border-radius: 1rem;
+        margin: 0px !important;
+        font-size: 14px;
+    }
+
+    .event-title-home {
+        font-size: 18px;
+        top: 14px;
+        left: 55px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .signup-form-section {
+        margin-top: 48px;
+    }
+
+    .event-category-section {
+        position: static;
+        padding: 0;
+        border: 1px solid #c3d8f7;
+        margin: 10px;
+        border-radius: 20px;
+        background-color: #f6f6f6;
+    }
+
+    p.banner_shop_desc {
+        font-size: 14px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+    }
+
+    p.banner_shop_desc {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .event-title-home img {
+        width: 11px;
+    }
+
+    .header-logo {
+        left: 22%;
+        width: 138px;
+        top: -20px;
+    }
+
+    .home_banner {
+        padding: 0px 64px;
+    }
+
+    .container-fluid {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .cursor-pointer {
+        padding: 0px;
+    }
+
+    .lottie-container {
+        display: none;
+    }
+
+    .event-list-bg {
+        position: static;
+        padding: 0;
+    }
+
+    .footer-logo {
+        height: auto;
+        width: 120px;
+    }
+
+    span.Want-to-receive {
+        font-size: 16px;
+        line-height: 25px;
+        margin-bottom: 10px;
+    }
+
+    .footer-title {
+        font-size: 32px;
+        top: -1px;
+    }
+
+    .subsacribe-content {
+        position: absolute;
+        padding: 0;
+        top: 10px;
+        left: 40px;
+    }
+
+    .OurPartnerIcon-title {
+        width: 100%;
+    }
+
     .header-item-overlay {
         z-index: 34;
         position: fixed;
@@ -10,6 +390,7 @@
         opacity: 0.75;
         height: 66px;
     }
+
     .header-container {
         display: flex;
         justify-content: space-between;
@@ -21,23 +402,13 @@
         top: 0;
         z-index: 35;
     }
+
     .flip-text-animation {
         height: 50px;
     }
 
-    p.banner_shop_desc {
-        font-size: 9px;
-        line-height: 11px;
-        display: flex;
-        align-items: center;
-    }
-
     .in-event-page-cart-sec .price-section {
         max-width: 60px;
-    }
-    .event-title-home {
-        top: -17px;
-        left: 27px;
     }
 
     p.banner_text {
@@ -79,7 +450,7 @@
     }
 
     input.theme-input {
-        width: 285px;
+        width: 220px;
     }
 
     .category-items-box {
@@ -90,17 +461,9 @@
         justify-content: center;
     }
 
-    .event-title-home img {
-        width: 18px;
-    }
-
     .event-category-img {
 
         font-size: 10px;
-    }
-
-    span.on-img-date-val {
-        top: 2px;
     }
 
     span.on-img-date img {
@@ -116,16 +479,13 @@
     }
 
     .event-box-mobile {
-        margin: 0px 00px;
+        margin: 15px 0px;
     }
 
     .event-title-home {
-        font-size: 19px;
+        font-size: 20px;
         position: relative;
-    }
-
-    .event-box-mobile .event-box-style {
-        margin: 0px 14px;
+        margin-bottom: 30px;
     }
 
     img.organiger-logo {
@@ -146,14 +506,6 @@
     .event-name p {
         font-size: 11px;
         margin-bottom: 0;
-    }
-
-    .More-events .ticket-price-area-bg {
-        background-position: 0px 73px;
-    }
-
-    span.on-img-date-val {
-        top: 4px;
     }
 
     .on-img-date {
@@ -233,16 +585,6 @@
         margin-bottom: 50px;
     }
 
-    .subsacribe-content {
-        padding: 0;
-    }
-
-    span.Want-to-receive {
-        font-size: 9px;
-        line-height: 19px;
-        margin-top: 25px;
-    }
-
     .button-join .bg-style-white {
         padding: 4px 8px !important;
     }
@@ -261,20 +603,10 @@
         flex-direction: column;
     }
 
-    .event-list-bg {
-        padding-top: 0px;
-    }
-
-    img.LogoIcon-footer {
-        right: 0px;
-        top: 0;
-        height: 81px;
-    }
-
-    .subsscribe-box-style {
-        position: relative;
-        top: 28px;
-        padding-bottom: 30px;
+    .footer-input {
+        height: 46px;
+        width: 210px;
+        margin-right: 25px;
     }
 
     .subsscribe-form-input-area {
@@ -403,7 +735,7 @@
     }
 
     .footer-title {
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .category-section {
@@ -426,9 +758,11 @@
     .mob-sc-css-head-btn {
         margin-left: -25px;
     }
-.mob-sc-main .mob-sc-css-head-btn {
-    margin-left: 25px;
-}
+
+    .mob-sc-main .mob-sc-css-head-btn {
+        margin-left: 25px;
+    }
+
     li.nav-item.mob-sc-css-head-btn-mar {
         margin-left: 45px;
         margin-right: -23px;
@@ -459,16 +793,6 @@
         top: 0px;
         right: 0px;
     }
-
-    img.about11 {
-        height: auto;
-        width: -webkit-fill-available;
-        border-radius: 26px;
-        position: relative;
-        bottom: inherit;
-        top: 0;
-    }
-
     p.about_banner_short_text {
         padding-left: 4px;
         color: #000;
@@ -557,14 +881,6 @@
 
     p.contact-desc {
         font-size: 12px;
-    }
-
-    .Want-to-receive span {
-        display: inline;
-    }
-
-    .subsscribe-box-style img {
-        display: none;
     }
 
     /* Position and sizing of burger button */
@@ -665,19 +981,10 @@
         display: none;
     }
 
-    .container-fluid {
-        padding-left: 0px;
-        padding-right: 0px;
-    }
-
     .home_banner {
         padding: 0px 20px;
     }
 
-    .container-fluid {
-        padding-left: 10px !important;
-        padding-right: 10px !important;
-    }
 
     img.ticket-bg {
         width: auto;
@@ -706,21 +1013,12 @@
         height: auto;
         width: 45px;
     }
-
-    .footer-title {
-        top: 1px;
-    }
-
     .content-data-event {
         padding: 0px 10px;
     }
 
     .price-section p {
         font-size: 11px;
-    }
-
-    .ticket-price-area-bg {
-        background-position: 0px 36px;
     }
 
     .bg-style-white {
@@ -755,455 +1053,115 @@
         font-size: 15px;
     }
 
+    img.LogoIcon-footer {
+        right: -42px;
+        top: -110px;
+        height: 337px;
+    }
+
 }
 
-@media only screen and (max-width: 800px) and (min-width: 766px) {
-    p.banner_text {
-        font-size: 30px;
-        line-height: 42px;
-        padding-bottom: 0;
-    }
-
-    .category-section {
-        margin-top: 0;
-        margin-left: 65px;
-    }
-
-    img.ticket-bg {
-        width: auto;
-        height: 71px;
-    }
-
-    .ticket-category-bg {
-        top: 20px;
-        width: 76px;
-    }
-
-    p.category-title {
-        font-size: 10px;
-        right: 28px;
-    }
-
-    select.theme-dropdown {
-        width: 174px;
-        margin-bottom: 10px;
-    }
-
-    input.theme-input {
-        width: 171px;
-    }
-
-    .event-list-bg {
-        background-image: none;
-    }
-
-    .header-logo {
-        position: relative;
-        left: 26px;
-        height: auto;
-        width: 100px;
-        top: -4px;
-    }
-
-    .rectangle_bg {
-        top: 64px;
-    }
-
-    .home_banner {
-        padding: 0px 5px;
-    }
-
-    p.banner_shop_desc {
-        font-size: 18px;
-    }
-
-    /* Position and sizing of burger button */
-    .bm-burger-button {
-        position: absolute;
-        width: 30px;
-        height: 24px;
-        right: 30px;
-        top: 23px;
-    }
-
-    /* Color/shape of burger icon bars */
-    .bm-burger-bars {
-        background: #373a47;
-    }
-
-    /* Color/shape of burger icon bars on hover*/
-    .bm-burger-bars-hover {
-        background: #a90000;
-    }
-
-    /* Position and sizing of clickable cross button */
-    .bm-cross-button {
-        height: 24px;
-        width: 24px;
-    }
-
-    /* Color/shape of close button cross */
-    .bm-cross {
-        background: #bdc3c7;
-    }
-
-    /*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-    .bm-menu-wrap {
-        position: fixed;
-        height: 100%;
-    }
-
-    /* General sidebar styles */
-    .bm-menu {
-        background: #fff;
-        padding: 2.5em 1.5em 0;
-        font-size: 1.15em;
-    }
-
-    /* Morph shape necessary with bubble or elastic */
-    .bm-morph-shape {
-        fill: #373a47;
-    }
-
-    /* Wrapper for item list */
-    .bm-item-list {
-        color: #b8b7ad;
-        padding: 0.8em;
-    }
-
-    /* Individual item */
-    .bm-item {
-        display: inline-block;
-    }
-
-    /* Styling of overlay */
-    .bm-overlay {
-        background: rgba(0, 0, 0, 0.3);
-    }
-
-    .only-mobile {
-        display: initial;
-    }
-
-    .only-pc {
-        display: none;
-    }
-
-    .bm-burger-button {
-        display: initial;
-    }
-    .signup-form-section {
-        margin-top: 25px;
-    }
-}
-
-@media only screen and (max-width: 1480px) and (min-width: 800px) {
-    p.banner_text {
-        font-size: 60px;
-        line-height: 94px;
-        padding-bottom: 13px;
-    }
-
-    .rectangle_bg {
-        top: 35px;
-    }
-
-    .website_top_menu .nav-item {
-        font-size: 16px;
-    }
-
-    .header-logo {
-        left: 24%;
-        width: 138px;
-        top: -20px;
-    }
-
-    p.category-title {
-        font-weight: 600;
-        color: #0047ab;
+@media only screen and (max-width: 768px) {
+    span.Want-to-receive {
         font-size: 14px;
-        position: relative;
+        line-height: 20px;
+        margin-bottom: 10px;
+        padding-left: 20px;
     }
 
-    .event-box-mobile {
-        margin: 0px 20px;
+    .As_a_leading_sec-main{
+        margin-top: 10px !important;
+    }
+    .subsscribe-form-input {
+        margin-left: 0 !important;
     }
 
-    .event-box-style {
-        margin: 0px 5px;
+    .subsscribe-form-inner {
+        margin-bottom: 0 !important;
     }
 
-    span.on-img-date img {
-        width: 23px;
+    .mob-sc-css-head-btn {
+        margin-left: 0;
     }
 
-    span.on-img-date-val {
-        font-size: 17px;
-    }
-
-    .on-img-date {
-        right: 14px;
-    }
-
-    .event-category-img {
-        font-size: 13px;
-    }
-
-    .price-section p {
-        font-size: 16px;
-    }
-
-    .price {
-        font-size: 23px;
-    }
-
-    .event-title-home {
-        font-size: 28px;
-        top: 14px;
-        left: 66px;
-    }
-
-    .count-box {
-        background-size: 100%;
-        height: 181px;
-        width: 210px;
-        background-size: 100% 100%;
-    }
-
-    .partner-slider .mx-3 {
-        margin: 5px !important;
-    }
-
-    .count-box-title {
-        font-size: 45px;
-    }
-
-    .count-box-count {
-        font-size: 39px;
-    }
-
-    .partner-slider img {
-        width: 160px;
-        margin: 0px 10px;
+    .footer-bottom-container.row {
+        background-color: #fff;
+        padding: 0;
+        border-radius: 20px;
     }
 
     img.LogoIcon-footer {
-        right: -42px;
-        top: -150px;
-        height: 457px;
+        right: -4px;
+        top: -75px;
+        height: 217px;
     }
 
-    .Want-to-receive span {
-        display: inline;
+    .footer-input {
+        margin-right: 10px;
+        width: 168px;
+        height: 39px;
     }
 
-    span.Want-to-receive {
-        font-size: 30px;
-    }
-
-    .footer-title {
-        font-size: 41px;
-        top: 10px;
-    }
-
-    img.footer-star-icon {
-        height: auto;
-        width: 42px;
+    .subsscribe-box-style img {
+        position: relative;
+        top: 27px;
+        width: 14px;
     }
 
     .footer-box-style {
-        padding: 20px 0px 60px 30px;
-    }
-
-    .footer-right-box ul li {
-        font-size: 21px;
-    }
-
-    .content-data-event {
-        padding: 0px 10px;
-    }
-
-    .eventpage-box-style {
-        padding: 14px 10px;
-    }
-
-    p.time-box-date {
-        font-size: 21px;
-        margin: 0px 8px;
-        height: 44px;
-        width: 44px;
-    }
-
-    .time-box-text {
-        font-size: 9px;
-        margin-top: 5px;
-    }
-
-    .event-page-organizer-deta.d-block {
-        font-size: 10px;
-    }
-
-    .event-page-ticket .right-box-con {
-        padding: 0px 10px;
-    }
-
-    .event-page-ticket .cart-increment-button {
-        position: relative;
-        top: -20px;
-        left: -38px;
-        width: max-content;
-    }
-
-    .event-page-ticket .d-flex {
-        display: inline-flex !important;
-    }
-
-    .event-page-ticket .event-time {
-        color: #000;
-        font-size: 10px;
-    }
-
-    .event-page-ticket .event-duration {
-        font-size: 9px !important;
-    }
-
-    .event-page-ticket .main-title {
-        font-size: 15px;
-        margin: 0px 9px;
-    }
-
-    .paynow-btn-box {
-        margin: 11px !important;
-    }
-
-    .ticket-price-area-bg {
-        background-position: 0px -13px;
-    }
-
-    img.web-icon-about {
-        top: 68px;
-        left: 30px;
-    }
-
-    p.about_banner_text {
-        font-weight: 500;
-        font-size: 34px;
-    }
-
-    p.about_banner_short_text {
-        padding-left: 26px;
-        font-size: 19px;
-    }
-
-    .As_a_leading_sec {
-        padding: 0px 50px;
-        text-align: left;
-        margin-top: 50px;
-    }
-
-    img.about2 {
-        width: 300px;
-    }
-
-    .about2_box h3 {
-        font-size: 48px;
-    }
-
-    .about2_box p {
-        padding-right: 0;
-        font-size: 14px;
-    }
-
-    .our_values_title {
-        font-size: 23px;
-    }
-
-    p.our_values_desc {
-        font-size: 15px;
-    }
-}
-@media only screen and (max-width: 1024px) {
-    .header-logo {
-        left: 23%;
-        width: 105px;
-        top: -23px;
-    }
-    .home_banner {
-        padding: 0px 48px;
-    }
-    .button-join .bg-style {
-        background: #0047AB;
-        color: #fff;
-        padding: 9px 12px !important;
-        border-radius: 1rem;
-        margin: 0px !important;
-        font-size: 14px;
-    }
-    .event-title-home {
-        font-size: 28px;
-        top: 14px;
-        left: 47px;
+        border-radius: 30px;
+        padding: 10px 0;
     }
 }
 
-@media only screen and (max-width: 991px) {
-    .signup-form-section {
-        margin-top: 48px;
+@media only screen and (max-width: 575px) {
+    img.LogoIcon-footer {
+        right: 8px;
+        top: -82px;
+        height: 254px;
     }
-    p.banner_shop_desc {
-        font-size: 14px;
-        line-height: 19px;
-        display: flex;
-        align-items: center;
-    }
-    .event-list-bg {
-        padding: 40px !important;
-        position: relative;
-    }
-    p.banner_shop_desc {
-        font-size: 18px;
-        line-height: 22px;
-    }
-    .partner-slider-margin {
-        margin-top: -60px;
-    }
-    .event-title-home img {
-        width: 11px;
-    }
-    .header-logo {
-        left: 22%;
-        width: 138px;
-        top: -20px;
-    }
-    .home_banner {
-        padding: 0px 64px;
-    }
+
     .container-fluid {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
-    .event-title-home {
-        top: -17px;
-        left: 39px;
+}
+
+@media only screen and (max-width: 480px) {
+    .ticket-category-bg {
+        left: 79px;
+        height: auto;
+        width: 72px;
     }
-    .cursor-pointer {
-        padding: 0px;
-    }
-    .lottie-container{
+
+    img.LogoIcon-footer {
         display: none;
     }
-    .event-list-bg {
-        padding: 0px;
-        position: relative;
+
+    .subsacribe-content {
+        position: static;
+        padding: 0;
+        border: 1px solid #c3d8f7;
+        margin: 10px;
+        border-radius: 20px;
+        background-color: #f6f6f6;
     }
-}
-@media only screen and (max-width: 480px) {
-.ticket-category-bg {
-    left: 79px;
-    height: auto;
-    width: 72px;
-}
+
+    .SubscribeBg {
+        display: none;
+    }
+
+    .footer-input {
+        margin-right: 4px;
+        margin-bottom: 10px;
+    }
+
+    .subscribe-btn {
+        margin: 10px 0;
+        position: static;
+    }
+
+    .d-flex.Find-Near-form-inner {
+        display: block !important;
+    }
 }
