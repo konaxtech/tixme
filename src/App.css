@@ -21,10 +21,12 @@
   padding: 7px 14px !important;
   border-radius: 12px !important;
 }
+
 .button-join-white .bg-style {
   background: #fff !important;
-  color: #0047AB  !important;
+  color: #0047AB !important;
 }
+
 .button-join .bg-style {
   background: #0047AB;
   color: #fff;
@@ -244,6 +246,7 @@ span.input-group-text {
 }
 
 .linear-background {
+  border-radius: 20px;
   animation-duration: 1s;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -531,15 +534,18 @@ span.flatpickr-weekday {
   font-size: 18px;
   display: inline-block;
 }
+
 .hobby-active {
   background: #0047ab;
   color: #fff;
   border: 1px solid #0047ab;
 }
-.no-data-box p{
+
+.no-data-box p {
   margin-bottom: 0px;
   padding: 20px 0px;
 }
+
 .no-data-box {
   width: 100%;
   text-align: center;
@@ -548,8 +554,24 @@ span.flatpickr-weekday {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 .date-style-picker {
   position: absolute;
   width: 100%;
   opacity: 0;
+}
+.deznav .metismenu {
+  max-height: 700px;
+  overflow-y: scroll;
+  scrollbar-width: thin;  /* Firefox */
+  scrollbar-color: transparent transparent;  /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 11 */
+}
+
+.deznav .metismenu::-webkit-scrollbar {
+  width: 6px;  /* Adjust as needed */
+}
+
+.deznav .metismenu::-webkit-scrollbar-thumb {
+  background-color: transparent;  /* Adjust as needed */
 }

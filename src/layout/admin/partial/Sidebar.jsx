@@ -14,6 +14,7 @@ import { FaUsers } from "react-icons/fa6";
 
 const Sidebar = () => {
     const [Listitems, setListitems] = useState([]);
+    const [Countrylist, setCountrylist] = useState([]);
     const fetchList = async () => {
         try {
 
@@ -40,8 +41,35 @@ const Sidebar = () => {
         }
 
     }
+    const fetchCountrylist = async () => {
+        try {
+
+            fetch(apiurl + 'admin/country-list', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Set the Content-Type header to JSON
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success == true) {
+                        setCountrylist(data.data);
+                    }
+
+                })
+                .catch(error => {
+                    console.error('Insert error:', error);
+
+                });
+        } catch (error) {
+            console.error('Login api error:', error);
+
+        }
+
+    }
     useEffect(() => {
         fetchList();
+        fetchCountrylist()
     }, []);
     const navigate = useNavigate();
     function d() {
@@ -130,6 +158,18 @@ const Sidebar = () => {
                                 <span className="nav-text">Payout request</span>
                             </Link>
                         </li > */}
+                        {/* <li onClick={() => d()}>
+                            <a href="javascript:void(0);" class="has-arrow ai-icon" aria-expanded="false">
+                                <img src={EventIcon} alt="Your Logo" />
+                                <span class="nav-text">Payout request</span>
+                            </a>
+                            <ul aria-expanded="false">
+                                {Countrylist.map((item, index) => (
+                                    <li>
+                                        <Link className='text-black' to={`${admin_url}payout-request/${item._id}/${item.name}`}>{item.name}</Link></li>
+                                ))}
+                            </ul>
+                        </li> */}
                         <li onClick={() => d()}>
                             <Link to={admin_url + 'contact-us'} className="ai-icon" aria-expanded="false">
                                 <img src={DashboardIcon} alt="Your Logo" />

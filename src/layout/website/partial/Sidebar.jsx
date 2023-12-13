@@ -22,6 +22,13 @@ const Sidebar = () => {
                             </span>
                         </Link>
                     </li>
+                    <li className="nav-item">
+                        <Link className="button-join" to={app_url + 'events'}>
+                            <span>
+                                Events
+                            </span>
+                        </Link>
+                    </li>
                     {/* <li className="nav-item">
                         <Link className="button-join" to={app_url + 'terms-and-conditions'}>
                             <span>

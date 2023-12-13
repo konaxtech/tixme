@@ -8,6 +8,7 @@ import PersonIcon from '../../../common/icon/person 1.svg';
 import AppLogo from '../../../common/logo.svg';
 import WhitestarBtn from '../../../component/Whitestarbtn';
 import WhipersonBtn from '../../../component/Whiteuserbtn';
+import Mapbutton from '../../../component/Mapbutton';
 import Rectangle from '../../../common/image/Rectangle.png';
 import { Link } from "react-router-dom";
 import Sidebar from './Sidebar'
@@ -30,11 +31,9 @@ const Header = () => {
                                 <li className="nav-item">
                                     <Link to={app_url}><img className="header-logo mobile-screen" src={AppLogo} /></Link>
                                 </li>
-                                {/* <li className="nav-item mob-sc-css-head-btn-mar">
-                                    <Link to={organizer_url + 'dashboard'}>
-                                        <WhitestarBtn title={'Location'} />
-                                    </Link>
-                                </li> */}
+                                <li className="nav-item mob-sc-css-head-btn-mar">
+                                    <Mapbutton title={'location'} />
+                                </li>
                                 <li className="nav-item header-btn-res">
                                     {customer_token || organizer_token ?
                                         (

@@ -4,11 +4,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import LocationIcon from "../../common/icon/location.svg";
 import MailIcon from "../../common/icon/mail.svg";
-import toast from 'react-hot-toast';
+import toast from "react-hot-toast";
 import BannerComponent from "../../component/BannerTop";
 import WhiteBtn from "../../component/Whitestarbtn";
 import { Link } from "react-router-dom/dist";
-import { apiurl, app_url, isEmail } from '../../common/Helpers';
+import { apiurl, app_url, isEmail } from "../../common/Helpers";
 const Page = ({ title }) => {
   const [name, setname] = useState();
   const [email, setemail] = useState();
@@ -18,59 +18,58 @@ const Page = ({ title }) => {
   const HandelContactform = async () => {
     try {
       if (!name) {
-        return toast.error('Name must not be empty');
+        return toast.error("Name must not be empty");
       }
       if (!email) {
-        return toast.error('Email must not be empty');
+        return toast.error("Email must not be empty");
       }
       if (!subject) {
-        return toast.error('Subject must not be empty');
+        return toast.error("Subject must not be empty");
       }
       if (!message) {
-        return toast.error('Message must not be empty');
+        return toast.error("Message must not be empty");
       }
       if (!isEmail(email)) {
-        return toast.error('Enter valid email address');
+        return toast.error("Enter valid email address");
       }
       setLoader(true);
       const requestData = {
         name: name,
         email: email,
         subject: subject,
-        message: message
+        message: message,
       };
-      fetch(apiurl + 'website/contact-store', {
-        method: 'POST',
+      fetch(apiurl + "website/contact-store", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json', // Set the Content-Type header to JSON
+          "Content-Type": "application/json", // Set the Content-Type header to JSON
         },
         body: JSON.stringify(requestData),
       })
-        .then(response => response.json())
-        .then(data => {
+        .then((response) => response.json())
+        .then((data) => {
           if (data.success == true) {
             toast.success(data.data);
-            setname('');
-            setemail('');
-            setsubject('');
-            setmessage('');
+            setname("");
+            setemail("");
+            setsubject("");
+            setmessage("");
           } else {
             toast.error(data.data);
           }
           setLoader(false);
         })
-        .catch(error => {
+        .catch((error) => {
           setLoader(false);
           toast.error(error);
-          console.error('Insert error:', error);
+          console.error("Insert error:", error);
         });
     } catch (error) {
-      console.error('Login api error:', error);
+      console.error("Login api error:", error);
     }
-
-  }
+  };
   return (
-    <div className='content-data'>
+    <div className="content-data">
       <Container>
         <Row>
           <BannerComponent title={title} />
@@ -84,8 +83,16 @@ const Page = ({ title }) => {
                   <div className="d-inline-block">
                     <h4 className="contact-title">Our Address</h4>
                     <p className="contact-desc">
-                      Office No 3N, Vijay Chambers Premises CHS LTD, Grant Road,
-                      Tribhuvan Road, Mumbai, Maharashtra, India 400004
+                      <b>India Address : </b>Office 3N, Vijay Chambers, Grant
+                      Road, Mumbai, Maharashtra 400004
+                    </p>
+                    <p className="contact-desc">
+                      <b>USA Address : </b>660 Washington Street, Boston, MA
+                      02111
+                    </p>
+                    <p className="contact-desc">
+                      <b>Singapore Address : </b>10 Jalan Besar, #17-02, Sim Lim
+                      Tower, Singapore 208787
                     </p>
                   </div>
                 </div>
@@ -96,8 +103,13 @@ const Page = ({ title }) => {
                   <div className="d-inline-block">
                     <h4 className="contact-title">Our Email</h4>
                     <p className="contact-desc">
-                      tixme.sg@gmail.com tixme.india@gmail.com
-                      tixme.usa@gmail.com
+                      <b>India Email : </b>tixme.india@gmail.com
+                    </p>
+                    <p className="contact-desc">
+                      <b>USA Email : </b> tixme.usa@gmail.com
+                    </p>
+                    <p className="contact-desc">
+                      <b>Singapore Email : </b>tixme.sg@gmail.com
                     </p>
                   </div>
                 </div>
@@ -107,7 +119,15 @@ const Page = ({ title }) => {
                   </div>
                   <div className="d-inline-block">
                     <h4 className="contact-title">Our Phone</h4>
-                    <p className="contact-desc">+91 8080292007</p>
+                    <p className="contact-desc">
+                      <b>India Phone : </b>+91 8080292007 (WhatsApp)
+                    </p>
+                    <p className="contact-desc">
+                      <b>USA Phone : </b>+1 (617) 775 0311
+                    </p>
+                    <p className="contact-desc">
+                      <b>Singapore Phone : </b>+65 90288903 (WhatsApp)
+                    </p>
                   </div>
                 </div>
               </Col>
@@ -119,7 +139,7 @@ const Page = ({ title }) => {
                         <p className="pb-3 mx-3">Send A Message</p>
                       </div>
                     </Col>
-                    <Col md={6} className="contact-1" >
+                    <Col md={6} className="contact-1">
                       <input
                         type="text"
                         onChange={(e) => setname(e.target.value)}
@@ -128,7 +148,7 @@ const Page = ({ title }) => {
                         placeholder="Enter your first name"
                       />
                     </Col>
-                    <Col md={6} className="contact-2" >
+                    <Col md={6} className="contact-2">
                       <input
                         type="text"
                         onChange={(e) => setemail(e.target.value)}
@@ -146,7 +166,7 @@ const Page = ({ title }) => {
                         placeholder="Enter email subject"
                       />
                     </Col>
-                    <Col md={12} className="contact-4 mb-4" >
+                    <Col md={12} className="contact-4 mb-4">
                       <textarea
                         rows="5"
                         value={message}
@@ -155,14 +175,14 @@ const Page = ({ title }) => {
                         placeholder="Enter your message"
                       ></textarea>
                     </Col>
-                    <Col md={12} className="mb-4 contact-5" >
+                    <Col md={12} className="mb-4 contact-5">
                       {Loader ? (
                         <span>
-                          <WhiteBtn title={'Please wait...'} />
+                          <WhiteBtn title={"Please wait..."} />
                         </span>
                       ) : (
                         <span onClick={() => HandelContactform()}>
-                          <WhiteBtn title={'Submit'} />
+                          <WhiteBtn title={"Submit"} />
                         </span>
                       )}
                     </Col>

@@ -15,6 +15,7 @@ import AllEventlist from './pages/admin/event/AllEventlist';
 import Membership from './pages/admin/membership/Membership';
 import AdminCustomerProfile from './pages/admin/CustomerProfile';
 import AdminOrganizerProfile from './pages/admin/OrganizerProfile';
+import AdminPayoutrequest from './pages/admin/payout/list';
 import AdminLayout from './layout/admin/Layout'
 // Customer
 import CustomerDashboard from './pages/customer/Dashboard';
@@ -65,7 +66,7 @@ import Raiseticket from './pages/website/Raiseticket';
 import CartDetails from './pages/website/CartDetails';
 import OrderSuccessful from './pages/website/OrderSuccessful';
 import OrderFailed from './pages/website/OrderFailed';
-
+import Events from './pages/website/Events';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { app_url, organizer_url, admin_url, customer_url } from './common/Helpers';
@@ -95,12 +96,12 @@ function App() {
           <Route path={app_url + 'contact'} element={<WebsiteLayout> <Contact title={'Contact Us'} /> </WebsiteLayout>} />
           <Route path={app_url + 'organizers'} element={<WebsiteLayout> <Organizers title={'Organizers'} /> </WebsiteLayout>} />
           <Route path={app_url + 'raise-ticket'} element={<WebsiteLayout> <Raiseticket title={'Raise Ticket'} /> </WebsiteLayout>} />
+          <Route path={app_url + 'events'} element={<WebsiteLayout> <Events title={'Events'} /> </WebsiteLayout>} />
           <Route path={`${app_url}organizer-profile/:id/:name`} element={<WebsiteLayout> <OrganizerDetails title={'Organizer Profile'} /> </WebsiteLayout>} />
           <Route path={app_url + 'cart-details'} element={<WebsiteLayout> <CartDetails title={'Your Cart'} /> </WebsiteLayout>} />
           <Route path={app_url + 'order-successful-page'} element={<WebsiteLayout> <OrderSuccessful title={'Payment status'} /> </WebsiteLayout>} />
           <Route path={app_url + 'order-failed-page'} element={<WebsiteLayout> <OrderFailed title={'Payment status'} /> </WebsiteLayout>} />
           <Route path={app_url + 'scanner'} element={<Scaner title={'Payment status'} />} />
-
           {/* Customer */}
           <Route path={customer_url + 'dashboard'} element={<CustomerLayout> <CustomerDashboard title={'Customer Dashboard'} /> </CustomerLayout>} />
           <Route path={customer_url + 'support-tickets'} element={<CustomerLayout> <CustomerSupportlist title={'Support Tickets'} /> </CustomerLayout>} />
@@ -135,6 +136,7 @@ function App() {
           <Route path={`${admin_url}customers/:id/:name`} element={<AdminLayout> <AllCustomers title={'Customers'} /> </AdminLayout>} />
           <Route path={`${admin_url}user-details/:id/:name`} element={<AdminLayout> <AdminCustomerProfile title={'Customers'} /> </AdminLayout>} />
           <Route path={`${admin_url}organizer-details/:id/:name`} element={<AdminLayout> <AdminOrganizerProfile title={'Organizer'} /> </AdminLayout>} />
+          <Route path={`${admin_url}payout-request/:id/:name`} element={<AdminLayout> <AdminPayoutrequest title={'Payout request'} /> </AdminLayout>} />
           <Route path={admin_url + 'active-organizer'} element={<AdminLayout> <ActiveOrganizer title={'Active Organizer'} /> </AdminLayout>} />
           <Route path={admin_url + 'pending-organizer'} element={<AdminLayout> <PendingOrganizer title={'Pending Organizer'} /> </AdminLayout>} />
           <Route path={admin_url + 'support-tickets'} element={<AdminLayout> <Supportlist title={'Support Tickets'} /> </AdminLayout>} />

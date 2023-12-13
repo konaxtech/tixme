@@ -47,7 +47,7 @@ const Footer = () => {
     }
     return (
         <>
-            {/* {ShowCart ? (<Lottie className="cart-box-show" onClick={() => viewcart()} title="View Cart" animationData={TicketCart} style={lottewidth} />) : ''} */}
+            {ShowCart ? (<Lottie className="cart-box-show" onClick={() => viewcart()} title="View Cart" animationData={TicketCart} style={lottewidth} />) : ''}
             <Container>
                 <div className="subsacribe-box">
                     <Tada><img src={LogoIcon} className="LogoIcon-footer" alt="" /></Tada>
@@ -58,7 +58,7 @@ const Footer = () => {
                                 <span>
                                     <img src={EllipseIcon} alt="" />
                                 </span>
-                                <span className="Want-to-receive"><span> Want to receive events &</span> <span> news and updates?</span></span>
+                                <span className="Want-to-receive"><span> Stay in the Loop: Subscribe to TIXME<br />  for ExclusiveEvents, News, and Updates!</span></span>
                             </div>
                             <div className="ml-5">
                                 <div className="mt-4 mb-4 subsscribe-form-input-area">
@@ -70,7 +70,7 @@ const Footer = () => {
                                 </div>
                                 <div className="subscribe-btn">
                                     <Link className="button-join" to={'/'}>
-                                        <Whitestarbtn title={'Get the latest updates'} />
+                                        <Whitestarbtn title={'Stay TIXED!'} />
                                     </Link>
                                 </div>
                             </div>
@@ -85,14 +85,11 @@ const Footer = () => {
                             <Col md={12} className="">
                                 <ul className="website_top_menu website_top_menu-footer text-center ">
                                     <li className="nav-item">
-                                        <span className="">
-                                            <img src={Whitestart} className="footer-star-icon" alt="" /> <span className="footer-title">Ready to host events ?</span>
-                                        </span>
                                     </li>
                                     <li className="nav-item">
                                         <Link className="button-join" to={'/'}>
                                             <Link to={app_url + 'auth/organizer/signup'}>
-                                                <BluestarBtn title={'Create Event'} />
+                                                <BluestarBtn title={'List Event'} />
                                             </Link>
                                         </Link>
                                     </li>
@@ -139,20 +136,15 @@ const Footer = () => {
                             <Col md={7} className="right-footer-logo-box">
                                 <Row className="footer-right-box  footer-box-style">
                                     <Col md={6}>
-                                        <span className="footer-box-style-title">Find Events</span>
-                                        <ul>
-                                            {/* <li>Browse Online Events</li> */}
-                                            <li><Link to={app_url + 'raise-ticket'}>Customer support</Link></li>
-                                        </ul>
-                                    </Col>
-                                    <Col md={6}>
                                         <span className="footer-box-style-title">Connect With Us</span>
                                         <ul>
                                             {/* <li>Report This Event</li>
                                             <li>Help Center</li> */}
-                                            <li><Link className="text-dark" to={app_url + 'terms-and-conditions'}>Terms</Link></li>
+                                            <li><Link className="text-dark" to={app_url + 'contact'}>Contact us</Link></li>
+                                            <li><Link className="text-dark" to={app_url + 'faq'}>Chat Support</Link></li>
                                             <li><Link className="text-dark" to={app_url + 'privacy-policy'}>Privacy</Link></li>
                                             <li><Link className="text-dark" to={app_url + 'faq'}>FAQ</Link></li>
+                                            <li><Link className="text-dark" to={app_url + 'terms-and-conditions'}>Terms</Link></li>
                                             {/* <li>Accessibility</li>
                                             <li>Community Guidelines</li> */}
                                         </ul>

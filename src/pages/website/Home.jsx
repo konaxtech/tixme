@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 import GoogleIcon from "../../common/icon/googleicon.svg";
 import AirbnbLogo from "../../common/icon/image 7.png";
 import BookingLogo from "../../common/icon/image 8.png";
@@ -177,6 +177,30 @@ const Home = ({ title }) => {
     leave: { transform: 'translateY(-100%)', opacity: 0 },
     config: { tension: 220, friction: 120 }
   });
+  const [currentLocation, setCurrentLocation] = useState(null);
+  const [showLocation, setShowLocation] = useState(false);
+
+  const showCurrentLocation = (e) => {
+    e.preventDefault();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setCurrentLocation({ lat: latitude, lng: longitude });
+          const url = `https://www.google.com/maps/@?api=1&map_action=map=${latitude},${longitude}`;
+          window.open(url, "_blank");
+        },
+        () => {
+          alert(
+            "Could not get your location. Please enable location services."
+          );
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+    setShowLocation(true);
+  };
   const CategoryImage = [
     { image: Arts },
     { image: Business },
@@ -192,13 +216,13 @@ const Home = ({ title }) => {
         <div className="home_banner">
           <Row>
             <Col>
-              <p className="banner_shop_desc">
+              {/* <p className="banner_shop_desc">
                 <span className="bullet-point"></span>
                 <Flip top>
                   Safe, secure, reliable ticketing. Your ticket to live
                   entertainment !
                 </Flip>
-              </p>
+              </p> */}
               <p className="banner_text">
                 <Flip top cascade>
                   <div>
@@ -238,7 +262,7 @@ const Home = ({ title }) => {
             <div className="find-nearby-section">
               <Row>
                 <Col md={12}>
-                  <h3 className="find-near-box">Find Near By Events</h3>
+                  <h3 className="find-near-box">Find Nearby Events</h3>
                 </Col>
                 <Col md={12} className="Find-Near-form">
                   <div>
@@ -247,8 +271,16 @@ const Home = ({ title }) => {
                         <option value={item._id}>{item.name}</option>
                       ))}
                     </select>
-                    <select name="" id="" className="theme-dropdown dropdown-custome location-select">
-                      <option value="">Location</option>
+                    <select
+                      name=""
+                      id=""
+                      className="theme-dropdown dropdown-customer location-select"
+                    >
+                      <option value="location">Location</option>
+                      <option
+                        value="my current location"
+                        onClick={showCurrentLocation}>My Current Location
+                      </option>
                     </select>
                   </div>
                   <input
@@ -257,6 +289,21 @@ const Home = ({ title }) => {
                     placeholder="Search anything"
                   />
                 </Col>
+                {showLocation && (
+                  <div >
+                    <LoadScript googleMapsApiKey="AIzaSyDhWeUv_PRpblvaIoascl69mpTFEE7F2kc">
+                      <GoogleMap
+                        mapContainerStyle={{ height: "100%", width: "100%" }}
+                        center={currentLocation}
+                        zoom={15}
+                      >
+                        {currentLocation && (
+                          <Marker position={currentLocation} />
+                        )}
+                      </GoogleMap>
+                    </LoadScript>
+                  </div>
+                )}
                 <Col md={12} className="category-box-responsive">
                   <div className="category-section text-center">
                     <Slider {...settings}>
@@ -419,8 +466,8 @@ const Home = ({ title }) => {
         </div>
         <div className="events-count-section mt-5 mb-5">
           <div className="text-center">
-            <ul>
-              <li className="d-inline-block">
+            <ul className="events-count-list">
+              {/* <li className="d-inline-block">
                 <Fade bottom cascade>
                   <div className="count-box">
                     <h3 className="count-box-title">Events</h3>
@@ -431,11 +478,11 @@ const Home = ({ title }) => {
                     </h3>
                   </div>
                 </Fade>
-              </li>
+              </li> */}
               <li className="d-inline-block">
                 <Fade bottom cascade>
                   <div className="count-box">
-                    <h3 className="count-box-title">Events</h3>
+                    <h3 className="count-box-title">Events Hosted</h3>
                     <h3 className="count-box-count">
                       <span>
                         <CountUp separator="" start={4000} end={6067} />+
@@ -447,7 +494,7 @@ const Home = ({ title }) => {
               <li className="d-inline-block">
                 <Fade bottom cascade>
                   <div className="count-box">
-                    <h3 className="count-box-title">Events</h3>
+                    <h3 className="count-box-title">Tickets Sold</h3>
                     <h3 className="count-box-count">
                       <span>
                         <CountUp separator="" start={4000} end={8544} />+
@@ -459,7 +506,7 @@ const Home = ({ title }) => {
               <li className="d-inline-block">
                 <Fade bottom cascade>
                   <div className="count-box">
-                    <h3 className="count-box-title">Events</h3>
+                    <h3 className="count-box-title">Partners & Organizers</h3>
                     <h3 className="count-box-count">
                       <span>
                         <CountUp separator="" start={4000} end={9800} />+
@@ -471,7 +518,7 @@ const Home = ({ title }) => {
               <li className="d-inline-block">
                 <Fade bottom cascade>
                   <div className="count-box">
-                    <h3 className="count-box-title">Events</h3>
+                    <h3 className="count-box-title">Operating Countries</h3>
                     <h3 className="count-box-count">
                       <span>
                         <CountUp separator="" start={4000} end={9088} />+

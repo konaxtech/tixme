@@ -24,23 +24,31 @@ const Page = ({ title }) => {
             </Zoom>
           </Col>
           <Col md={5}>
-            <Slide top cascade>
+            {/* <Slide top cascade>
               <p className="about_banner_shop_desc">
                 <span className="bullet-point"></span> Meet Cut the Code
               </p>
-            </Slide>
-            <Slide top cascade>
+            </Slide> */}
+            {/* <Slide top cascade>
               <p className="about_banner_text">
-                A new generation of digital creators
+                Symbol for excellent customer support
               </p>
-            </Slide>
+            </Slide> */}
             <Slide top cascade>
               <div>
                 <p className="about_banner_short_text">
-                  The digital world? It changes fast. Keeping up with it takes
-                  time and knowledge that not all brands have. But that all of
-                  them need. We believe that being at the forefront starts with a
-                  different approach to digital creation.
+                  Welcome to TIXME, where every ticket tells a story! Our
+                  mission is to redefine events, making each occasion an
+                  unforgettable and cherished memory. We promise fair prices,
+                  support event organizers with insights, and ensure secure
+                  transactions. Our user-friendly website and interactive
+                  features ensure simple ticketing and help curate extraordinary
+                  events. TIXME creates a community, by rewarding and
+                  incentivizing members with every ticket purchase. Our social
+                  network enables us to reach a variety of customers. To bring
+                  this vision to life, we seamlessly blend cutting-edge
+                  technology with an unwavering commitment to prioritizing
+                  customer satisfaction.
                 </p>
               </div>
             </Slide>
@@ -51,14 +59,46 @@ const Page = ({ title }) => {
             <div className="As_a_leading_sec">
               <Slide bottom cascade>
                 <div>
-                  <h3 className="mb-5">
-                    As a leading no-code agency, we’re here to help brands unlock
-                    the power of no-code through digital creation. Move faster,
-                    build smarter, scale more, code less.
-                  </h3>
+                  <p className="mb-5">
+                    Step with us into the spotlight of unforgettable moments
+                    where the journey is secure, the path is clear, and the
+                    memories are destined to be extraordinary!Seize the moment,
+                    secure your ticket!
+                  </p>
+                  <p className="mb-5">
+                    At TIXME, we believe in expressing our gratitude to our
+                    valued customers for their ongoing support. Thereby, we are
+                    proud to introduce our Loyalty and Rewards Program, designed
+                    to enhance your experience and show appreciation for your
+                    loyalty. As you embark on your ticket-buying journey with
+                    us, you automatically become a part of our three-tiered
+                    loyalty program: Silver, Gold and Platinum.
+                  </p>
+                  <p className="mb-5">
+                    <b>Silver Tier : </b> The Beginning Of Your Journey <br />
+                    As you make your initial purchases, you enter the Silver
+                    Tier, unlocking a range of benefits. Enjoy exclusive
+                    discounts on future ticket purchases, ensuring that your
+                    loyalty is immediately rewarded.
+                  </p>
+                  <p className="mb-5">
+                    <b>Gold Tier : </b> Ascending To Greater Rewards <br />
+                    As you make your initial purchases, you enter the Silver
+                    Tier, unlocking a range of benefits. Enjoy exclusive
+                    discounts on future ticket purchases, ensuring that your
+                    loyalty is immediately rewarded.
+                  </p>
+                  <p className="mb-5">
+                    <b>Platinum Tier : </b> Achieving The Pinnacle Of Exclusive
+                    Benefits <br />
+                    As you make your initial purchases, you enter the Silver
+                    Tier, unlocking a range of benefits. Enjoy exclusive
+                    discounts on future ticket purchases, ensuring that your
+                    loyalty is immediately rewarded.
+                  </p>
                 </div>
               </Slide>
-              <Link className="button-join" to={"/"}>
+              {/* <Link className="button-join" to={"/"}>
                 <span>
                   <span className="bg-style btn-a">
                     <img height={30} width={30} src={whitestart} />
@@ -68,49 +108,54 @@ const Page = ({ title }) => {
                     <img height={30} width={30} src={whitestart} />
                   </span>
                 </span>
-              </Link>
+              </Link> */}
             </div>
           </Col>
         </Row>
         <Row className="mt-5 mb-5">
-          <Col md={5}>
+          {/* <Col md={5}>
             <Zoom>
               <img className="about2" src={about2} alt="" />{" "}
             </Zoom>
-          </Col>
+          </Col> */}
           <Col md={7}>
             <div className="about2_box">
-              <Slide bottom cascade>
-                <div><h3>Cutting the complex to drive progress</h3></div>
-              </Slide>
-              <Slide bottom cascade>
+              {/* <Slide bottom cascade>
                 <div>
-
+                  <h3>Symbol for personalization</h3>
+                </div>
+              </Slide> */}
+              {/* <Slide bottom cascade>
+                <div>
                   <p>
-                    By simplifying the process of building for the web, we have
-                    more room for the strategic and creative stuff. Producing
-                    beautiful, scalable projects designed to bring our clients the
-                    most value. Our approach is to always strive for more of the
-                    new, and less of the same. Always open to change, and never
-                    closed off to new possibilities. That’s the mindset behind
-                    everything that we do.
+                    At TIXME, we believe in expressing our gratitude to our
+                    valued customers for their ongoing support. Thereby, we are
+                    proud to introduce our Loyalty and Rewards Program, designed
+                    to enhance your experience and show appreciation for your
+                    loyalty. As you embark on your ticket-buying journey with
+                    us, you automatically become a part of our three-tiered
+                    loyalty program: Silver, Gold and Platinum.
                   </p>
                 </div>
-              </Slide>
+              </Slide> */}
             </div>
           </Col>
         </Row>
-        <Row className="our_values_div">
+        {/* <Row className="our_values_div">
           <Col md={12}>
             <h3 className="sec-main-title">Our values</h3>
           </Col>
           <Col md={4} xs={12} className="mb-3">
             <Slide bottom>
               <div className="our_values_box mx-2">
-                <p className="our_values_title">Move faster</p>
+                <p className="our_values_title">
+                  The Beginning Of Your Journey
+                </p>
                 <p className="our_values_desc">
-                  Getting there before anyone else, in the most efficient way
-                  possible. Working smarter, not harder.
+                  As you make your initial purchases, you enter the Silver Tier,
+                  unlocking a range of benefits. Enjoy exclusive discounts on
+                  future ticket purchases, ensuring that your loyalty is
+                  immediately rewarded.
                 </p>
               </div>
             </Slide>
@@ -118,10 +163,13 @@ const Page = ({ title }) => {
           <Col md={4} xs={12} className="mb-3">
             <Slide bottom>
               <div className="our_values_box mx-2">
-                <p className="our_values_title">Iterate to better</p>
+                <p className="our_values_title">Ascending To Greater Rewards</p>
                 <p className="our_values_desc">
-                  The drive to elevate everything that we do through a process
-                  of continuous improvement.
+                  With continued engagement, your loyalty propels you into the
+                  Gold Tier, where the rewards become even more enticing. In
+                  addition to enhanced discounts, Gold members get early access
+                  to select events, securing your spot before general sales
+                  commence.
                 </p>
               </div>
             </Slide>
@@ -129,15 +177,19 @@ const Page = ({ title }) => {
           <Col md={4} xs={12} className="mb-3">
             <Slide bottom>
               <div className="our_values_box mx-2">
-                <p className="our_values_title">Focus on flow</p>
+                <p className="our_values_title">
+                  The Pinnacle Of Exclusive Benefits
+                </p>
                 <p className="our_values_desc">
-                  A state of mind and way of working that is fluid, transparent
-                  and fast to make the complex clear.
+                  TIXME’s platinum members receive the most substantial
+                  discounts, priority access to special events, and exclusive
+                  perks tailored to make your ticket-buying experience truly
+                  exceptional.
                 </p>
               </div>
             </Slide>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     </div>
   );
