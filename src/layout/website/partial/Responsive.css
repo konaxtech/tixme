@@ -99,7 +99,7 @@
     }
 
     .eventpage-box-style {
-        padding: 14px 10px;
+        padding: 14px 15px;
     }
 
     p.time-box-date {
@@ -310,15 +310,11 @@
 
     p.banner_shop_desc {
         font-size: 14px;
-        line-height: 19px;
+        line-height: 20px;
         display: flex;
         align-items: center;
     }
 
-    p.banner_shop_desc {
-        font-size: 18px;
-        line-height: 22px;
-    }
 
     .event-title-home img {
         width: 11px;
@@ -480,6 +476,7 @@
 
     .event-box-mobile {
         margin: 15px 0px;
+        padding: 0 10px;
     }
 
     .event-title-home {
